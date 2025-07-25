@@ -1,0 +1,5 @@
+pandas
+beautifulsoup4
+lxml           # faster parsing backend for pd.read_html / BS
+tqdm           # nice progress bars
+requests       # for web scraping individual player pages
