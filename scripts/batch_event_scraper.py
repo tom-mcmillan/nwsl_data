@@ -46,8 +46,8 @@ def main():
     processed = 0
     errors = 0
     
-    # Process recent files first (they have better data structure)
-    for html_file in recent_files[:10]:  # Process first 10 recent files
+    # Process recent files first (they have better data structure)  
+    for html_file in recent_files[:100]:  # Process first 100 recent files
         match_id = get_match_id_from_filename(html_file)
         
         print(f"\n🔄 Processing {os.path.basename(html_file)}")

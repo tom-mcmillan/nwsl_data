@@ -126,22 +126,22 @@ class MatchEventScraper:
             home_score = int(score_match.group(1)) if score_match else None
             away_score = int(score_match.group(2)) if score_match else None
             
-            # Determine event type from icon or text
-            event_type = self._determine_event_type(event_div, event_text)
+            # Determine event type ID from icon or text
+            event_type_id = self._determine_event_type_id(event_div, event_text)
             
             # Extract player name
-            player_name = self._extract_player_name(event_div, event_type)
+            player_name = self._extract_player_name(event_div, event_type_id)
             
             # Extract assist player (for goals)
             assist_player = None
-            if event_type == 'goal' and 'Assist:' in event_text:
+            if event_type_id == 'et_a1b2c3d4' and 'Assist:' in event_text:  # Goal
                 assist_match = re.search(r'Assist:\s*([^—\n]+)', event_text)
                 if assist_match:
                     assist_player = assist_match.group(1).strip()
             
             # Extract substitution info
             substituted_player = None
-            if event_type == 'substitution' and ' for ' in event_text:
+            if event_type_id == 'et_m3n4o5p6' and ' for ' in event_text:  # Substitution
                 sub_match = re.search(r'([^—\n]+) for ([^—\n]+)', event_text)
                 if sub_match:
                     player_name = sub_match.group(1).strip()
@@ -151,7 +151,7 @@ class MatchEventScraper:
                 'match_id': match_id,
                 'team_name': team_name,
                 'minute': minute,
-                'event_type': event_type,
+                'event_type_id': event_type_id,
                 'player_name': player_name,
                 'assist_player': assist_player,
                 'substituted_player': substituted_player,
@@ -164,34 +164,34 @@ class MatchEventScraper:
             print(f"⚠️ Error parsing event div: {e}")
             return None
     
-    def _determine_event_type(self, event_div, event_text):
-        """Determine event type from icon or text"""
+    def _determine_event_type_id(self, event_div, event_text):
+        """Determine event type ID from icon or text - returns event_type_id"""
         # Look for event icon inside the event div
         icon_div = event_div.find('div', class_=re.compile(r'event_icon'))
         if icon_div:
             icon_classes = icon_div.get('class', [])
             if 'goal' in icon_classes:
-                return 'goal'
+                return 'et_a1b2c3d4'  # Goal
             elif 'yellow_card' in icon_classes:
-                return 'yellow_card'
+                return 'et_e5f6g7h8'  # Yellow card
             elif 'red_card' in icon_classes:
-                return 'red_card'
+                return 'et_i9j0k1l2'  # Red card
             elif 'substitute_in' in icon_classes:
-                return 'substitution'
+                return 'et_m3n4o5p6'  # Substitution
         
         # Fallback to text analysis
         if '— Goal' in event_text:
-            return 'goal'
+            return 'et_a1b2c3d4'  # Goal
         elif '— Yellow Card' in event_text:
-            return 'yellow_card'
+            return 'et_e5f6g7h8'  # Yellow card
         elif '— Red Card' in event_text:
-            return 'red_card'
+            return 'et_i9j0k1l2'  # Red card
         elif '— Substitute' in event_text:
-            return 'substitution'
+            return 'et_m3n4o5p6'  # Substitution
         
-        return 'unknown'
+        return 'et_unknown'  # Unknown
     
-    def _extract_player_name(self, event_div, event_type):
+    def _extract_player_name(self, event_div, event_type_id):
         """Extract player name from event div - look for <a> tags first"""
         try:
             # First try to find player name in <a> tags (more reliable)
@@ -217,7 +217,7 @@ class MatchEventScraper:
                     line not in ['Goal', 'Yellow Card', 'Red Card', 'Substitute']):
                     
                     # For substitutions, handle "Player for OtherPlayer" format
-                    if event_type == 'substitution' and ' for ' in line:
+                    if event_type_id == 'et_m3n4o5p6' and ' for ' in line:  # Substitution
                         return line.split(' for ')[0].strip()
                     
                     # Return the first valid player name found
@@ -243,20 +243,26 @@ class MatchEventScraper:
                 substituted_player_id = self._get_player_id(conn, event['substituted_player']) if event['substituted_player'] else None
                 team_id = self._get_team_id(conn, event['team_name']) if event['team_name'] else None
                 
-                # Insert event using actual table schema
+                # Insert event using normalized table schema (no event_type column)
                 conn.execute('''
                     INSERT OR REPLACE INTO match_event (
                         event_id, match_id, team_id, team_name, player_id, player_name,
-                        minute, event_type, description
+                        minute, event_type_id, description
                     ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
                 ''', (
                     event_id, match_id, team_id, event['team_name'],
-                    player_id, event['player_name'], event['minute'], event['event_type'],
+                    player_id, event['player_name'], event['minute'], event['event_type_id'],
                     event['event_text']
                 ))
                 
                 saved_count += 1
-                print(f"  💾 {event['minute']}' {event['event_type']}: {event['player_name']} ({event['team_name']})")
+                # Get event type name for display
+                event_type_name = conn.execute(
+                    'SELECT event_type_name FROM event_types WHERE event_type_id = ?', 
+                    (event['event_type_id'],)
+                ).fetchone()
+                event_type_display = event_type_name[0] if event_type_name else event['event_type_id']
+                print(f"  💾 {event['minute']}' {event_type_display}: {event['player_name']} ({event['team_name']})")
                 
             except Exception as e:
                 print(f"⚠️ Failed to save event: {e}")
