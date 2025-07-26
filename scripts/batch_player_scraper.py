@@ -54,7 +54,7 @@ def main():
     processed = 0
     errors = 0
     
-    for html_file in html_files[:10]:  # Start with first 10 for testing
+    for html_file in html_files[:100]:  # Process first 100 files
         match_id = get_match_id_from_filename(html_file)
         
         if match_id in existing_matches:
