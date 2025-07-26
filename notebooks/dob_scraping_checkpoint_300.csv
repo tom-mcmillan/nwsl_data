@@ -1,0 +1,301 @@
+player_id,player_name,scraped_dob,status,success
+52b58405,Abby Dahlkemper,"May 13, 1993",success,True
+947d22fb,Abby Smith,"October 4, 1993",success,True
+15c7bfb7,Adriana Leon,"October 2, 1992",success,True
+220b9b36,Ainsley Mccammon,"August 16, 2007",success,True
+abf96cef,Aisha Solórzano,"April 13, 1998",success,True
+7ca7c385,Alana Cook,"April 11, 1997",success,True
+8252bc62,Alanna Kennedy,"January 21, 1995",success,True
+ea429c45,Alex Loera,"June 19, 1999",success,True
+0567dc96,Alexa Spaanstra,"February 1, 2000",success,True
+51e267dc,Aline,"July 7, 2005",success,True
+7bbb977b,Ally Lemos,"March 4, 2004",success,True
+758fe55e,Ally Schlegel,"February 7, 2000",success,True
+e91c05ee,Ally Sentnor,"February 18, 2004",success,True
+56d5fb23,Ally Watt,"March 12, 1997",success,True
+50bf36a3,Alyssa Malonson,"April 9, 1999",success,True
+4c1ee572,Alyssa Naeher,,HTTP 403,False
+2fcc0a10,Alyssa Thompson,"November 7, 2004",success,True
+36355319,Amanda McGlynn,"November 3, 1998",success,True
+8d5a8340,Ana María Guzmán,"June 11, 2005",success,True
+93504985,Ana Tejada,"June 2, 2002",success,True
+d3c316a3,Ana-Maria Crnogorčević,"October 3, 1990",success,True
+49d6d4a8,Angelina,,HTTP 429,False
+06115ef0,Angelina Anderson,,HTTP 429,False
+6444e5a0,Angharad James,,HTTP 429,False
+be9f3298,Ann-Katrin Berger,,HTTP 429,False
+271c5edc,Anna Moorhouse,,HTTP 429,False
+6ddcbd4c,Aria Nagai,,HTTP 429,False
+2b0527c9,Arin Wright,,HTTP 429,False
+fa566209,Ary Borges,,HTTP 429,False
+d2de2f84,Ashley Hatch,,HTTP 429,False
+9ced946b,Ashley Sanchez,,HTTP 429,False
+23a1662b,Asisat Oshoala,,HTTP 429,False
+020eaa4d,Aubrey Kingsbury,,HTTP 429,False
+662d7873,Ava Cook,,HTTP 429,False
+883f60f8,Avery Patterson,,HTTP 429,False
+7824185a,Barbra Banda,,HTTP 429,False
+28814cc8,Bayley Feist,,HTTP 429,False
+fb6605c0,Bea Franklin,,HTTP 429,False
+d6ed0c7f,Beatriz,,HTTP 429,False
+73eb19a8,Bella Bixby,,HTTP 429,False
+271e0873,Bianca St-Georges,,HTTP 429,False
+5b88fd9c,Brecken Mozingo,,HTTP 429,False
+9be20864,Brianna Martinez,,HTTP 429,False
+57045f36,Brianna Pinto,,HTTP 429,False
+34603a7a,Brittany Ratcliffe,,HTTP 429,False
+ee98152f,Brooklyn Courtnall,,HTTP 429,False
+f790716d,Bruninha,,HTTP 429,False
+b4ce93ce,Bárbara Olivieri,,HTTP 429,False
+4a296e8e,Caiya Hanks,,HTTP 429,False
+76828205,Camryn Biegalski,,HTTP 429,False
+c4f44958,Caprice Dydasco,,HTTP 429,False
+56f16bc7,Cari Roccaro,,HTTP 429,False
+b035ac13,Caroline Conti,,HTTP 429,False
+61531e4e,Carson Pickett,,HTTP 429,False
+ed06502e,Casey Krueger,,HTTP 429,False
+493c384e,Casey Murphy,,HTTP 429,False
+124d6db5,Casey Phair,,HTTP 429,False
+703f4922,Catherine Barry,,HTTP 429,False
+8e2a7ac1,Cecelia Kizer,,HTTP 429,False
+939ba0d8,Chardonnay Curran,,HTTP 429,False
+80442566,Chiamaka Okwuchukwu,,HTTP 429,False
+32b99c02,Chloe Ricketts,,HTTP 429,False
+fe95f6e7,Christen Press,,HTTP 429,False
+274666f1,Christen Westphal,,HTTP 403,False
+f2284088,Claire Emslie,,HTTP 429,False
+7db28545,Claire Hutton,,HTTP 429,False
+5689807c,Claudia Dickey,,HTTP 429,False
+82f12690,Claudia Zornoza,,HTTP 429,False
+ace997a7,Cori Dyke,,HTTP 429,False
+55d492ba,Cortnee Vine,,HTTP 429,False
+9982f5c6,Courtney Brown,,HTTP 429,False
+05d6a62d,Courtney Petersen,,HTTP 429,False
+aa0f9aa7,Croix Bethune,,HTTP 429,False
+006f18aa,Daiane,,HTTP 429,False
+2e6a5e3e,Dana Foederer,,HTTP 403,False
+442d8200,Dani Weatherholt,,HTTP 429,False
+24478b0c,Danielle Colaprico,"May 6, 1993",success,True
+85cea0cf,Debinha,,HTTP 429,False
+ef032510,Delanie Sheehan,,HTTP 429,False
+9d82fe8e,Delphine Cascarino,,HTTP 429,False
+2f3ffc2d,Denise O'Sullivan,,HTTP 429,False
+1b470ecd,Deyna Castellanos,,HTTP 429,False
+0a85fee3,Diana Ordoñez,,HTTP 429,False
+1b15d6a3,Dorian Bailey,,HTTP 429,False
+eea3655d,Elizabeth Ball,,HTTP 429,False
+14de6d32,Ella Hase,,HTTP 429,False
+268a4e22,Ella Stevens,,HTTP 429,False
+350886ec,Elli Pikkujämsä,,HTTP 429,False
+feb132ed,Ellie Jean,,HTTP 429,False
+a69d6298,Ellie Wheeler,,HTTP 429,False
+e64b3c35,Emeri Adames,,HTTP 429,False
+ce4f4c97,Emily Mason,,HTTP 429,False
+acbf23b6,Emily Menges,,HTTP 429,False
+714e5fef,Emily Sams,,HTTP 429,False
+08acd418,Emily Sonnett,,HTTP 429,False
+7ec2ba7c,Emma Sears,,HTTP 429,False
+f3e2324d,Emmie Allen,,HTTP 429,False
+ecacba26,Esme Morgan,,HTTP 429,False
+8f146dff,Esther González,,HTTP 429,False
+0b96a829,Evelina Duljan,,HTTP 429,False
+55930662,Favour Emmanuel,,HTTP 429,False
+01079eae,Felicitas Rauch,,HTTP 429,False
+8dd703ab,Gabi Portilho,,HTTP 429,False
+77ce913d,Gabrielle Carle,,HTTP 429,False
+5b5de127,Geyse,,HTTP 429,False
+0ae418c9,Gia Corley,,HTTP 429,False
+5307f686,Gift Monday,,HTTP 429,False
+36008361,Gisele Thompson,,HTTP 429,False
+3a794757,Grace Chanda,,HTTP 429,False
+388948a7,Hailie Mace,,HTTP 429,False
+277ae96a,Hal Hershfelt,,HTTP 429,False
+45cf25bf,Haley Hanson,,HTTP 429,False
+5d05e9a1,Haley Hopkins,,HTTP 429,False
+453fa0c0,Halle Mackiewicz,,HTTP 429,False
+fc33d14d,Hanna Glas,,HTTP 429,False
+37ed9d8f,Hanna Lundkvist,,HTTP 429,False
+53cef818,Hannah Anderson,,HTTP 429,False
+47b9e2ef,Hannah Bebar,,HTTP 429,False
+130c8e6e,Hannah Betfort,,HTTP 429,False
+285627af,Hannah Johnson,,HTTP 429,False
+c95d751e,Heather Stainbrook,,HTTP 429,False
+aa1c2ad1,Hina Sugita,,HTTP 429,False
+92f8713a,Imani Dorsey,,HTTP 429,False
+43d5b985,Isabel Rodriguez,,HTTP 429,False
+a2fa9566,Isabella Obaze,,HTTP 429,False
+77361b23,Jaedyn Shaw,,HTTP 429,False
+3213cad3,Jaelin Howell,,HTTP 429,False
+0f668725,Jameese Joseph,,HTTP 429,False
+f3a1b6a9,Jamie Shepherd,,HTTP 429,False
+c40fd1ac,Jane Campbell,,HTTP 429,False
+43466fe0,Janine Sonis,,HTTP 429,False
+0c6c239b,Janni Thomsen,,HTTP 429,False
+e15b6ffd,Jayden Perry,,HTTP 429,False
+4d7dc3fd,Jenna Bike,,HTTP 429,False
+bb5e99fc,Jess Carter,,HTTP 429,False
+11cfa9d6,Jess Fishlock,,HTTP 429,False
+e47d2297,Jessie Fleming,,HTTP 429,False
+60d80b92,Ji So-yun,,HTTP 429,False
+edb4b4b1,Joelle Anderson,,HTTP 429,False
+87fc628b,Jordan Brewster,,HTTP 429,False
+c34d03e3,Jordan Fusco,,HTTP 429,False
+9fe4c40f,Jordan Silkowitz,,HTTP 429,False
+d8ece1b2,Jordyn Bloomer,,HTTP 429,False
+c5ca9ed9,Jordyn Bugg,,HTTP 429,False
+3d1f29d9,Jordyn Huitema,,HTTP 429,False
+43d2860b,Josefine Hasbo,,HTTP 429,False
+92075fc4,Julia Grosso,,HTTP 429,False
+020fa352,Julie Doyle,,HTTP 429,False
+662d8aeb,Julie Dufour,,HTTP 429,False
+7c6de047,Justina Gaynor,,HTTP 429,False
+cd6a0894,Jéssica Silva,,HTTP 429,False
+eba11dbe,KK Ream,,HTTP 429,False
+46b237d3,Kailen Sheridan,,HTTP 429,False
+1cc6b80b,Kaitlyn Torpey,,HTTP 429,False
+23b17daa,Kaleigh Kurtz,,HTTP 429,False
+c99616d8,Kaleigh Riehl,,HTTP 429,False
+93daa4eb,Karlie Lema,,HTTP 403,False
+8cfb97f5,Kate Del Fava,,HTTP 429,False
+7dc25da9,Kate Wiesner,,HTTP 429,False
+fa5e9ae1,Katie Lind,,HTTP 429,False
+e70a7484,Katie Lund,,HTTP 429,False
+c6b94261,Katie O’Kane,,HTTP 429,False
+213a7877,Katie Zelem,,HTTP 429,False
+9eef68fb,Kayla Fischer,,HTTP 429,False
+0ba36ee8,Kayla Sharples,,HTTP 429,False
+bc03c54d,Kelli Hubly,,HTTP 429,False
+be5200d5,Kennedy Fuller,,HTTP 429,False
+b07b7c39,Kennedy Wesley,,HTTP 429,False
+1cb43c5f,Kenza Dali,,HTTP 429,False
+45419c74,Kerry Abello,,HTTP 429,False
+1017b590,Khyah Harper,,HTTP 429,False
+938dc3a8,Kiki Pickett,,HTTP 429,False
+31d22151,Kiki Van Zanten,,HTTP 429,False
+ae1d3e35,Kiley Dulaney,,HTTP 429,False
+81b39775,Kimmi Ascanio,,HTTP 429,False
+7cb8a975,Kristen McNabb,,HTTP 429,False
+7f140cb9,Kylie Strom,,HTTP 429,False
+fe14499e,Kyra Carusa,,HTTP 429,False
+b86a8726,Kysha Sylla,,HTTP 429,False
+d67e21a2,Lacho Marta,,HTTP 429,False
+380c9205,Lauren Barnes,,HTTP 429,False
+fb6f6a24,Lauren Flynn,,HTTP 429,False
+08569d75,Lauren Milliet,,HTTP 429,False
+36e74d61,Leicy Santos,,HTTP 403,False
+72e66627,Leilanni Nesbeth,,HTTP 429,False
+aa902703,Lilly Reale,,HTTP 429,False
+e4ef9beb,Lo'eau LaBonta,,HTTP 429,False
+0ce1f38f,Lorena,,HTTP 429,False
+7fa57813,Ludmila,,HTTP 429,False
+0ac84745,Lynn Biyendolo,,HTTP 429,False
+243b7b15,Macey Fraser,,HTTP 429,False
+97b96797,Macey Hodge,,HTTP 429,False
+30f6344f,Mackenzie Arnold,,HTTP 429,False
+bfa99222,Maddie Mercado,,HTTP 429,False
+829fd286,Madeline Dahlien,,HTTP 429,False
+da57cca7,Madeline Moreau,,HTTP 429,False
+8b5135ec,Madison Curry,,HTTP 429,False
+16368450,Madison Hammond,,HTTP 429,False
+78d285e6,Madison Pogarch,,HTTP 429,False
+8dc6b01e,Maggie Graham,,HTTP 429,False
+95bc15ef,Maiara,,HTTP 429,False
+3ca55cb5,Maitane López Millán,,HTTP 429,False
+eeb2f6eb,Mak Whitham,,HTTP 429,False
+4059a68f,Makenna Morris,,HTTP 429,False
+2d4436d1,Makenzy Doniak,,HTTP 429,False
+f8e41f9d,Malia Berkely,,HTTP 429,False
+1af74efc,Mallie McKenzie,,HTTP 429,False
+bb65b66d,Manaka Hayashi,,HTTP 429,False
+a4a65861,Manaka Matsukubo,,HTTP 429,False
+ee5355a7,Mandy Freeman,,HTTP 429,False
+c94c70bc,Margaret Purce,,HTTP 429,False
+6b6dbea9,Margie Detrizio,,HTTP 429,False
+bd325738,Maria Sanchez,,HTTP 429,False
+a4c093fc,Marie-Yasmine Alidou,,HTTP 429,False
+2021c04f,Marisa DiGrande,,HTTP 429,False
+3857e361,Marta,,HTTP 429,False
+8f97c19a,Mary Long,,HTTP 429,False
+a0516248,Mary Vignola,,HTTP 429,False
+4b32b951,Maycee Bell,,HTTP 429,False
+1eb67c0e,McKinley Crone,,HTTP 429,False
+f60a0981,Meg Boade,,HTTP 429,False
+d66e970b,Megan Reid,,HTTP 429,False
+9e5caab3,Melanie Barcenas,,HTTP 429,False
+3ed16dcd,Meredith Speck,,HTTP 429,False
+01204fe0,Messiah Bright,,HTTP 429,False
+a3ac4412,Micayla Johnson,,HTTP 429,False
+b03e80f6,Michelle Alozie,,HTTP 429,False
+5f97ae2e,Michelle Cooper,,HTTP 429,False
+939315dc,Mikayla Cluff,,HTTP 429,False
+ac768b90,Mina Tanaka,,HTTP 429,False
+2ae9e277,Miyabi Moriya,,HTTP 429,False
+f44c4259,Morgan Gautrat,,HTTP 429,False
+57cb0988,Mwanalima Jereko,,HTTP 429,False
+7bb60dd3,Narumi Miura,,HTTP 429,False
+42325547,Natalia Kuikka,,HTTP 429,False
+c942bc07,Natalie Jacobs,,HTTP 429,False
+b26a8c1f,Nealy Martin,,HTTP 429,False
+9c06c97c,Nichelle Prince,,HTTP 429,False
+a5d0b32a,Nuria Rábano,,HTTP 429,False
+a1ee25ac,Nádia Gomes,,HTTP 429,False
+91c05463,Nérilia Mondésir,,HTTP 429,False
+799764cf,Oihane Hernández,,HTTP 429,False
+3ee50ac6,Olivia Moultrie,,HTTP 429,False
+74c3d2a9,Olivia Van der Jagt,,HTTP 429,False
+2625e415,Paige Monaghan,,HTTP 429,False
+2a0f0a55,Paige Nielsen,,HTTP 429,False
+364b1359,Payton Linnehan,,HTTP 429,False
+9b45521f,Penelope Hocking,,HTTP 429,False
+197fe553,Perle Morroni,,HTTP 429,False
+f02cb699,Phoebe McClernon,,HTTP 429,False
+7f88a259,Pietra Tordin,,HTTP 429,False
+70e954f3,Prisca Chilufya,,HTTP 429,False
+9bd465d8,Quincy McMahon,,HTTP 403,False
+32f48f46,Racheal Kundananji,,HTTP 429,False
+1d8b51dd,Rachel Hill,,HTTP 429,False
+d1a10776,Rafaelle,,HTTP 429,False
+28392158,Ramona Bachmann,,HTTP 429,False
+362b4969,Raquel Rodríguez,,HTTP 429,False
+09a7e270,Rebeca Bernal,,HTTP 429,False
+cc4c8fb2,Reilyn Turner,,HTTP 429,False
+bf9f8b7f,Reyna Reyes,,HTTP 429,False
+2e87a8a5,Riley Jackson,,HTTP 429,False
+18dd307e,Riley Tiernan,,HTTP 429,False
+dcd6a67e,Rose Lavelle,,HTTP 429,False
+1233544d,Rosemonde Kouassi,,HTTP 429,False
+c555eeb9,Ryan Campbell,,HTTP 429,False
+8055d335,Ryan Gareis,,HTTP 429,False
+787e8bfd,Ryan Williams,,HTTP 429,False
+77f494bb,Sally Menti,,HTTP 429,False
+4d28a90a,Sam Coffey,,HTTP 429,False
+eb036ce5,Samantha Hiatt,,HTTP 429,False
+c5863809,Samantha Meza,,HTTP 429,False
+9b763275,Samantha Staab,,HTTP 429,False
+90ebe6bf,Sandy MacIver,,HTTP 429,False
+c6122e4b,Sarah Gorden,,HTTP 429,False
+088dd3ef,Sarah Puntigam,,HTTP 429,False
+ec70f750,Sarah Schupansky,,HTTP 429,False
+f9ee912d,Sarah Weber,,HTTP 403,False
+add26dda,Savannah Demelo,,HTTP 429,False
+5dfeb94f,Savannah King,,HTTP 429,False
+8546d3ab,Savannah McCaskill,,HTTP 429,False
+09de4066,Shae Holmes,,HTTP 429,False
+ee96ceb8,Shea Groom,,HTTP 429,False
+580d2856,Shinomi Koyama,,HTTP 429,False
+bbda4bbe,Simone Jackson,,HTTP 429,False
+845abb1a,Sofia Cook,,HTTP 429,False
+cfd40479,Sophia Mattice,,HTTP 429,False
+52dd3fee,Sophie Hirst,,HTTP 429,False
+e8f90dc9,Sophie Schmidt,,HTTP 429,False
+4c2ad3f9,Stella Nyamekye,,HTTP 429,False
+4f994efc,Summer Yates,,HTTP 429,False
+e36eb31e,Sydney Jones,,HTTP 429,False
+b7c6d694,Talia Staude,,HTTP 429,False
+2d8ec240,Tara McKeown,,HTTP 429,False
+711932d7,Taryn Torres,,HTTP 429,False
+9d2c6180,Taylor Flint,,HTTP 429,False
+e9082a8d,Taylor Huff,,HTTP 429,False
+a0c8f7b2,Taylor Malham,,HTTP 429,False
+b86badfa,Temwa Chaŵinga,,HTTP 429,False
+4c3147d0,Tess Boade,,HTTP 429,False
