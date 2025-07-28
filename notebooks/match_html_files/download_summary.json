@@ -1,0 +1,50 @@
+{
+  "timestamp": "2025-07-27T18:53:00.983671",
+  "total_matches": 5,
+  "successful": 1,
+  "not_found": 0,
+  "errors": 4,
+  "methods_used": {
+    "selenium": 1
+  },
+  "results": [
+    {
+      "status": "success",
+      "match_id": "1a01081c",
+      "url": "https://fbref.com/en/matches/1a01081c",
+      "filename": "match_1a01081c.html",
+      "filepath": "match_html_files/match_1a01081c.html",
+      "download_method": "selenium",
+      "tables_extracted": [
+        "stats_8e306dc6_summary",
+        "keeper_stats_8e306dc6",
+        "stats_257fad2b_summary",
+        "keeper_stats_257fad2b"
+      ]
+    },
+    {
+      "status": "error",
+      "match_id": "0e4932ff",
+      "url": "https://fbref.com/en/matches/0e4932ff",
+      "error": "Failed to download content"
+    },
+    {
+      "status": "error",
+      "match_id": "12c17fb7",
+      "url": "https://fbref.com/en/matches/12c17fb7",
+      "error": "Failed to download content"
+    },
+    {
+      "status": "error",
+      "match_id": "8640ac6f",
+      "url": "https://fbref.com/en/matches/8640ac6f",
+      "error": "Failed to download content"
+    },
+    {
+      "status": "error",
+      "match_id": "2d03d5bd",
+      "url": "https://fbref.com/en/matches/2d03d5bd",
+      "error": "Failed to download content"
+    }
+  ]
+}
