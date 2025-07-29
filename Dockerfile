@@ -18,9 +18,9 @@ USER app
 # Expose port
 EXPOSE 8000
 
-# Health check - check if FastMCP server is responding on /mcp endpoint
+# Health check - check if FastMCP streamable HTTP server is responding
 HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 \
-    CMD python -c "import requests; requests.get('http://localhost:8000/mcp', timeout=10)" || exit 1
+    CMD python -c "import requests; requests.post('http://localhost:8000/mcp', json={'jsonrpc': '2.0', 'method': 'initialize', 'id': 1}, timeout=10)" || exit 1
 
 # Run the server with proper Cloud Run configuration
 CMD ["python", "mcp_server.py"]
