@@ -34,7 +34,6 @@ steps:
       '--min-instances', '0',
       '--concurrency', '80',
       '--timeout', '300',
-      '--set-env-vars', 'PORT=8000'
     ]
 
 # Store images in Container Registry
