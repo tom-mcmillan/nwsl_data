@@ -12,6 +12,7 @@ import logging
 from contextlib import contextmanager
 
 from mcp.server.fastmcp import FastMCP
+import uvicorn
 
 # Configure logging for MCP (stderr only, no stdout)
 logging.basicConfig(level=logging.ERROR, format='%(levelname)s: %(message)s')
@@ -440,9 +441,12 @@ if __name__ == "__main__":
         
         logger.info(f"🚀 Starting NWSL MCP Server on port {port}")
         
-        # Run FastMCP server with proper Cloud Run configuration
-        mcp.run(
-            transport="http",
+        # Get FastMCP streamable HTTP app for Cloud Run deployment
+        app = mcp.streamable_http_app()
+        
+        # Run with uvicorn for Cloud Run
+        uvicorn.run(
+            app,
             host="0.0.0.0",  # Required for Cloud Run
             port=port,
             log_level="error"  # Keep logs minimal for MCP
