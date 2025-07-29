@@ -12,7 +12,6 @@ import logging
 from contextlib import contextmanager
 
 from mcp.server.fastmcp import FastMCP
-import uvicorn
 
 # Configure logging for MCP (stderr only, no stdout)
 logging.basicConfig(level=logging.ERROR, format='%(levelname)s: %(message)s')
@@ -439,18 +438,12 @@ if __name__ == "__main__":
             logger.error(f"Database not found at {DB_PATH}")
             raise FileNotFoundError(f"Database not found at {DB_PATH}")
         
-        # Get the FastMCP HTTP app
-        app = mcp.http_app()
+        logger.info(f"🚀 Starting NWSL MCP Server on port {port}")
         
-        # Add a simple health check endpoint
-        @app.get("/health")
-        def health_check():
-            return {"status": "healthy", "service": "NWSL MCP Server"}
-        
-        # Run with uvicorn
-        uvicorn.run(
-            app, 
-            host="0.0.0.0", 
+        # Run FastMCP server with proper Cloud Run configuration
+        mcp.run(
+            transport="http",
+            host="0.0.0.0",  # Required for Cloud Run
             port=port,
             log_level="error"  # Keep logs minimal for MCP
         )
