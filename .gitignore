@@ -12,12 +12,14 @@ venv/
 # Jupyter Notebook
 .ipynb_checkpoints
 
-# Database files (can be large)
-*.db
+# Database files (can be large) - but include our main database for deployment
 *.db-shm
 *.db-wal
 *.sqlite
 *.sqlite3
+# Exclude backup databases but include main production database
+*_backup_*.db
+# !data/processed/nwsldata.db  # Force include main database - commented out, we'll add it explicitly
 
 # HTML cache files (large, can be re-downloaded)
 notebooks/match_html_files/
