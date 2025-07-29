@@ -442,6 +442,11 @@ if __name__ == "__main__":
         # Get the FastMCP HTTP app
         app = mcp.http_app()
         
+        # Add a simple health check endpoint
+        @app.get("/health")
+        def health_check():
+            return {"status": "healthy", "service": "NWSL MCP Server"}
+        
         # Run with uvicorn
         uvicorn.run(
             app, 
