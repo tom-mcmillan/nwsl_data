@@ -242,64 +242,41 @@ def get_team_performance(team_name: str, season: Optional[int] = None) -> str:
         return f"Error getting team performance: {str(e)}"
 
 @mcp.tool()
-def get_league_standings(season: int, match_type: str = "Regular Season") -> str:
-    """Get NWSL league standings ranked by expected goals differential.
+def get_league_standings(season: int) -> str:
+    """Get NWSL league standings ranked by points and goal differential.
     
     Args:
         season: Season year (e.g., 2024)
-        match_type: Match type filter (default: "Regular Season")
     
     Returns:
-        Formatted string with team rankings by xG differential
+        Formatted string with official league standings by points
     """
     try:
         with get_db_connection() as conn:
             query = """
-            SELECT team_name,
-                   SUM(games) as total_games,
-                   SUM(xg_for) as total_xg,
-                   SUM(xg_against) as total_xg_against,
-                   SUM(wins) as total_wins
-            FROM (
-                SELECT home_team_name as team_name, 
-                       COUNT(*) as games,
-                       SUM(xg_home) as xg_for,
-                       SUM(xg_away) as xg_against,
-                       SUM(CASE WHEN xg_home > xg_away THEN 1 ELSE 0 END) as wins
-                FROM match 
-                WHERE season_id = ? AND match_type_name = ?
-                  AND xg_home IS NOT NULL AND xg_away IS NOT NULL
-                GROUP BY home_team_name
-                
-                UNION ALL
-                
-                SELECT away_team_name as team_name,
-                       COUNT(*) as games,
-                       SUM(xg_away) as xg_for,
-                       SUM(xg_home) as xg_against,
-                       SUM(CASE WHEN xg_away > xg_home THEN 1 ELSE 0 END) as wins
-                FROM match 
-                WHERE season_id = ? AND match_type_name = ?
-                  AND xg_home IS NOT NULL AND xg_away IS NOT NULL
-                GROUP BY away_team_name
-            )
-            GROUP BY team_name
-            ORDER BY (total_xg - total_xg_against) DESC
+            SELECT position, team_name, matches_played, wins, losses, draws, 
+                   points, goals_for, goals_against, goal_differential,
+                   xg_for, xg_against, xg_differential
+            FROM league_standings 
+            WHERE season_id = ?
+            ORDER BY position
             """
             
-            cursor = conn.execute(query, (season, match_type, season, match_type))
+            cursor = conn.execute(query, (season,))
             results = cursor.fetchall()
             
             if not results:
                 return f"No standings data found for {season} season"
             
-            response = f"{season} NWSL {match_type} - Team Rankings (by xG differential):\n\n"
-            for i, row in enumerate(results, 1):
-                xg_diff = row['total_xg'] - row['total_xg_against']
-                win_pct = (row['total_wins'] / row['total_games']) * 100 if row['total_games'] > 0 else 0
-                response += f"{i:2d}. {row['team_name']}\n"
-                response += f"     Games: {row['total_games']}, Wins: {row['total_wins']} ({win_pct:.1f}%)\n"
-                response += f"     xG: {row['total_xg']:.1f}, xGA: {row['total_xg_against']:.1f} (Diff: {xg_diff:+.1f})\n\n"
+            response = f"{season} NWSL Regular Season Standings:\n\n"
+            for row in results:
+                win_pct = (row['wins'] / row['matches_played']) * 100 if row['matches_played'] > 0 else 0
+                response += f"{row['position']:2d}. {row['team_name']}\n"
+                response += f"     GP: {row['matches_played']}, W: {row['wins']}, L: {row['losses']}, D: {row['draws']}, Pts: {row['points']}\n"
+                response += f"     GF: {row['goals_for']}, GA: {row['goals_against']}, GD: {row['goal_differential']:+d}\n"
+                if row['xg_for'] and row['xg_against']:
+                    response += f"     xG: {row['xg_for']:.1f}, xGA: {row['xg_against']:.1f}, xGD: {row['xg_differential']:+.1f}\n"
+                response += "\n"
             
             return response
             
