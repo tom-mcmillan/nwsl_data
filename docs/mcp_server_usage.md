@@ -116,6 +116,40 @@ List all teams that participated in a given season.
 list_teams(2025) → Returns all teams in 2025 season
 ```
 
+### 10. `analyze_season` ⭐ **NEW**
+Comprehensive season analysis with narrative insights and context.
+
+**Parameters:**
+- `season` (int): Season year (2013-2025)
+
+**Example:**
+```
+analyze_season(2025) → Rich analysis: "📊 2025 NWSL Season Analysis... Current dominated with 33 points..."
+```
+
+### 11. `compare_seasons` ⭐ **NEW**
+Compare two NWSL seasons with key differences highlighted.
+
+**Parameters:**
+- `season1` (int): First season year (2013-2025)
+- `season2` (int): Second season year (2013-2025)
+
+**Example:**
+```
+compare_seasons(2024, 2025) → "⚖️ Season Comparison: League growth, scoring trends, competitiveness..."
+```
+
+### 12. `get_data_status` ⭐ **NEW**
+Show what NWSL data is available and suggest optimal queries.
+
+**Returns:**
+Overview of data availability and recommended queries
+
+**Example:**
+```
+get_data_status() → "📋 NWSL Data Availability Status... Current season has 91 games..."
+```
+
 ## Team Name Reference
 
 For 2025 season, use these team names:
@@ -174,6 +208,8 @@ resp = client.responses.create(
 - **Input Validation**: All inputs are validated with helpful error messages
 - **Team Name Matching**: Intelligent team name matching supports various formats
 - **Error Handling**: Comprehensive error handling with meaningful messages
+- **Live Calculations**: Standings calculated from match data when needed
+- **Intelligent Fallbacks**: Graceful handling when data is missing
 
 ## Data Coverage
 
@@ -184,18 +220,35 @@ resp = client.responses.create(
 
 ## Common Usage Patterns
 
-1. **Season Analysis**: Start with `get_season_overview(2025)` then drill down with `get_league_standings(2025)`
-2. **Team Deep Dive**: Use `get_team_performance("Courage", 2025)` → `get_team_roster("Courage", 2025)` → `get_match_results("Courage", season=2025)`
-3. **Player Research**: `search_players("Morgan")` → `get_player_stats("Alex Morgan", 2025)`
-4. **League Leaders**: `get_top_performers(2025, "goals")` for top scorers
+### 🔥 **Start with Analytical Tools** (Recommended)
+1. **Season Overview**: `analyze_season(2025)` - Get narrative insights and context
+2. **Compare Seasons**: `compare_seasons(2024, 2025)` - Understand trends and changes
+3. **Check Data**: `get_data_status()` - Know what queries work best
 
-## Error Messages
+### 📊 **Traditional Deep Dives**
+4. **Team Analysis**: `get_team_performance("Courage", 2025)` → `get_match_results("Courage", season=2025)`
+5. **Player Research**: `search_players("Morgan")` → `get_player_stats("Alex Morgan", 2025)`
+6. **League Context**: `get_league_standings(2025)` → `get_top_performers(2025, "goals")`
+
+### 💬 **Conversational Queries**
+The analytical tools are designed for natural conversation:
+- "Tell me about the 2025 season" → `analyze_season(2025)`
+- "How does 2025 compare to 2024?" → `compare_seasons(2024, 2025)`
+- "What data do you have?" → `get_data_status()`
+
+## Error Messages & Fallbacks
 
 The server provides helpful error messages for:
 - Invalid season years (must be 2013-2025)
 - Unknown team names (suggests alternatives)
 - Invalid limits (must be 1-50)
 - Missing data for specific queries
+
+**Smart Fallbacks:**
+- When pre-calculated standings are missing, calculates from match data
+- When player data is unavailable, suggests team-level queries
+- When queries fail, provides alternative suggestions
+- Always includes follow-up query recommendations
 
 ## Support
 
