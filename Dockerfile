@@ -7,6 +7,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy application code and database
+COPY server.py .
 COPY src/ ./src/
 COPY scripts/ ./scripts/
 COPY data/processed/nwsldata.db ./data/processed/
@@ -24,4 +25,4 @@ HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 \
     CMD python -c "import requests; requests.post('http://localhost:8000/mcp', json={'jsonrpc': '2.0', 'method': 'initialize', 'id': 1}, timeout=10)" || exit 1
 
 # Run the server with proper Cloud Run configuration
-CMD ["python", "-m", "src.server"]
+CMD ["python", "server.py"]
