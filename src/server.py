@@ -29,7 +29,7 @@ logging.basicConfig(level=logging.ERROR, format='%(levelname)s: %(message)s')
 logger = logging.getLogger("nwsl-mcp-server")
 
 # Database configuration
-DB_PATH = Path(__file__).parent / "data" / "processed" / "nwsldata.db"
+DB_PATH = Path(__file__).parent.parent / "data" / "processed" / "nwsldata.db"
 
 # Initialize tools with correct database path
 db_context = DatabaseContextTool(str(DB_PATH))
@@ -249,7 +249,7 @@ if __name__ == "__main__":
             app,
             host="0.0.0.0",  # Required for Cloud Run
             port=port,
-            log_level="error"  # Keep logs minimal for MCP
+            log_level="info"  # Show startup logs for debugging
         )
         
     except Exception as e:
