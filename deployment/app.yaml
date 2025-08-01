@@ -1,0 +1,13 @@
+runtime: python311
+service: nwsl-mcp-server
+
+env_variables:
+  PORT: 8000
+
+automatic_scaling:
+  min_instances: 1
+  max_instances: 10
+
+resources:
+  cpu: 1
+  memory_gb: 2
