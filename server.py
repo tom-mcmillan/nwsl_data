@@ -15,27 +15,56 @@ import sys
 # Add project root to path for imports
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
+# Configure logging for debugging startup issues (FIRST!)
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logger = logging.getLogger("nwsl-mcp-server")
+
 from mcp.server.fastmcp import FastMCP
 import uvicorn
 
 # Import our database tools
-from src.analyzers.database_context_tool import DatabaseContextTool
-from src.analyzers.team_performance_analyzer import TeamPerformanceAnalyzer
-from src.analyzers.enhanced_match_analyzer import MatchAnalyzer
-from src.analyzers.player_stats_analyzer import PlayerStatsAnalyzer
+logger.info("🟡 Importing database tools...")
+try:
+    from src.analyzers.database_context_tool import DatabaseContextTool
+    logger.info("✅ DatabaseContextTool imported")
+    
+    from src.analyzers.team_performance_analyzer import TeamPerformanceAnalyzer
+    logger.info("✅ TeamPerformanceAnalyzer imported")
+    
+    from src.analyzers.enhanced_match_analyzer import MatchAnalyzer
+    logger.info("✅ MatchAnalyzer imported")
+    
+    from src.analyzers.player_stats_analyzer import PlayerStatsAnalyzer
+    logger.info("✅ PlayerStatsAnalyzer imported")
+    
+except ImportError as e:
+    logger.error(f"❌ Failed to import analyzer: {e}")
+    raise
 
-# Configure logging for MCP (stderr only, no stdout)
-logging.basicConfig(level=logging.ERROR, format='%(levelname)s: %(message)s')
-logger = logging.getLogger("nwsl-mcp-server")
+logger.info("🟡 Starting server initialization...")
+logger.info("🟡 Python path setup complete")
 
 # Database configuration
 DB_PATH = Path(__file__).parent / "data" / "processed" / "nwsldata.db"
+logger.info(f"🟡 Database path configured: {DB_PATH}")
+logger.info(f"🟡 Database exists: {DB_PATH.exists()}")
 
 # Initialize tools with correct database path
+logger.info("🟡 Initializing database context tool...")
 db_context = DatabaseContextTool(str(DB_PATH))
+logger.info("✅ Database context tool initialized")
+
+logger.info("🟡 Initializing team performance analyzer...")
 team_analyzer = TeamPerformanceAnalyzer(str(DB_PATH))
+logger.info("✅ Team performance analyzer initialized")
+
+logger.info("🟡 Initializing match analyzer...")
 match_analyzer = MatchAnalyzer(str(DB_PATH))
+logger.info("✅ Match analyzer initialized")
+
+logger.info("🟡 Initializing player stats analyzer...")
 player_analyzer = PlayerStatsAnalyzer(str(DB_PATH))
+logger.info("✅ Player stats analyzer initialized")
 
 def safe_json_response(data: Any) -> str:
     """Safely convert data to JSON string"""
@@ -45,7 +74,9 @@ def safe_json_response(data: Any) -> str:
         return json.dumps({"error": f"JSON serialization failed: {str(e)}"})
 
 # Initialize FastMCP server
+logger.info("🟡 Initializing FastMCP server...")
 mcp = FastMCP("NWSL Analytics Server")
+logger.info("✅ FastMCP server initialized")
 
 @mcp.tool()
 def get_database_overview() -> str:
@@ -222,16 +253,24 @@ def validate_query(team_name: Optional[str] = None, season_id: Optional[int] = N
         return safe_json_response({"error": f"Query validation failed: {str(e)}"})
 
 if __name__ == "__main__":
+    logger.info("🟡 Entering main execution block...")
+    
     # Run as HTTP server for remote MCP access (Cloud Run deployment)
     port = int(os.environ.get("PORT", 8000))
+    logger.info(f"🟡 Port configured: {port}")
     
     try:
+        logger.info("🟡 Starting database verification...")
+        
         # Verify database exists
         if not DB_PATH.exists():
-            logger.error(f"Database not found at {DB_PATH}")
+            logger.error(f"❌ Database not found at {DB_PATH}")
             raise FileNotFoundError(f"Database not found at {DB_PATH}")
         
+        logger.info("✅ Database file exists")
+        
         # Test database connection
+        logger.info("🟡 Testing database connection...")
         try:
             overview = db_context.get_database_overview()
             logger.info(f"✅ Database connected: {overview.get('total_seasons', 'unknown')} seasons, {overview.get('total_matches', 'unknown')} matches")
@@ -239,10 +278,12 @@ if __name__ == "__main__":
             logger.error(f"❌ Database connection failed: {e}")
             raise
         
-        logger.info(f"🚀 Starting NWSL MCP Server on port {port}")
-        
+        logger.info(f"🟡 Creating FastMCP app...")
         # Get FastMCP streamable HTTP app for Cloud Run deployment
         app = mcp.streamable_http_app()
+        logger.info("✅ FastMCP app created")
+        
+        logger.info(f"🚀 Starting NWSL MCP Server on port {port}")
         
         # Run with uvicorn for Cloud Run
         uvicorn.run(
@@ -253,5 +294,6 @@ if __name__ == "__main__":
         )
         
     except Exception as e:
-        logger.error(f"Failed to start NWSL MCP Server: {e}")
+        logger.error(f"❌ Failed to start NWSL MCP Server: {e}")
+        logger.exception("Full traceback:")
         raise
