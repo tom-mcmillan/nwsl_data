@@ -19,10 +19,10 @@ from mcp.server.fastmcp import FastMCP
 import uvicorn
 
 # Import our database tools
-from src.analyzers.database_context_tool import DatabaseContextTool
-from src.analyzers.team_performance_analyzer import TeamPerformanceAnalyzer
-from src.analyzers.enhanced_match_analyzer import MatchAnalyzer
-from src.analyzers.player_stats_analyzer import PlayerStatsAnalyzer
+from .analyzers.database_context_tool import DatabaseContextTool
+from .analyzers.team_performance_analyzer import TeamPerformanceAnalyzer
+from .analyzers.enhanced_match_analyzer import MatchAnalyzer
+from .analyzers.player_stats_analyzer import PlayerStatsAnalyzer
 
 # Configure logging for MCP (stderr only, no stdout)
 logging.basicConfig(level=logging.ERROR, format='%(levelname)s: %(message)s')
