@@ -27,4 +27,4 @@ python3 -c "import mcp" 2>/dev/null || {
 
 # Start the server
 echo "🚀 Starting NWSL MCP Server..."
-python3 nwsl_mcp_server.py
+python3 -m src.server

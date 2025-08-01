@@ -177,7 +177,7 @@ Add this server to your `claude_desktop_config.json`:
   "mcpServers": {
     "nwsl-data": {
       "command": "python",
-      "args": ["/absolute/path/to/mcp_server.py"]
+      "args": ["-m", "src.server"]
     }
   }
 }

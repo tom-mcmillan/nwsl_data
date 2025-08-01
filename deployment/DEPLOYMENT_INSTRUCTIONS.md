@@ -8,7 +8,7 @@ This deployment fixes the issues you encountered:
 - ❌ **Protocol errors** → ✅ **Proper MCP integration**
 
 ## Files Created
-- `nwsl_mcp_server.py` - Complete working MCP server
+- `src/server.py` - Complete working MCP server (HTTP-ready)
 - `start_server.sh` - Server startup script
 - `system_prompt_concise.txt` - Updated system prompt
 - All database query tools in `scripts/` directory
@@ -16,7 +16,7 @@ This deployment fixes the issues you encountered:
 ## Quick Deployment
 
 ### 1. Replace Your Current Server
-Use `nwsl_mcp_server.py` as your MCP server instead of your current implementation.
+Use `src/server.py` as your MCP server - it's organized following best practices and ready for deployment.
 
 ### 2. Update System Prompt
 Replace your current system prompt with the content from `system_prompt_concise.txt`:

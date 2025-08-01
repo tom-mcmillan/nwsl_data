@@ -9,7 +9,7 @@
 
 2. Test the server locally:
    ```bash
-   python mcp_server.py
+   python -m src.server
    ```
 
 3. For OpenAI Playground integration, add this configuration to your MCP settings:
@@ -18,7 +18,7 @@
      "mcpServers": {
        "nwsl-data": {
          "command": "python",
-         "args": ["/path/to/your/mcp_server.py"],
+         "args": ["-m", "src.server"],
          "env": {}
        }
      }
