@@ -136,24 +136,30 @@ def extract_player_stats(table):
 def get_match_player_ids(conn, match_id):
     """Get match_player_id mappings for players in this match."""
     query = """
-    SELECT mp.match_player_id, mp.player_name, mp.player_id, mp.season_id
+    SELECT mp.match_player_id, mp.player_name, mp.player_id, mp.season_id,
+           CASE WHEN mps.match_player_id IS NOT NULL THEN 1 ELSE 0 END as has_summary
     FROM match_player mp
+    LEFT JOIN match_player_summary mps ON mp.match_player_id = mps.match_player_id
     WHERE mp.match_id = ?
+    ORDER BY has_summary DESC
     """
     
     cursor = conn.execute(query, (match_id,))
     results = cursor.fetchall()
     
     # Create mapping from player_id (which should be FBRef ID) to match_player_id
+    # Prioritize match_player_ids that have corresponding match_player_summary records
     fbref_to_match_player = {}
-    for match_player_id, player_name, player_id, season_id in results:
+    for match_player_id, player_name, player_id, season_id, has_summary in results:
         if player_id:
-            fbref_to_match_player[player_id] = {
-                'match_player_id': match_player_id,
-                'player_name': player_name,
-                'player_id': player_id,
-                'season_id': season_id
-            }
+            # Only override if we don't have this player_id yet, or if this record has a summary
+            if player_id not in fbref_to_match_player or has_summary:
+                fbref_to_match_player[player_id] = {
+                    'match_player_id': match_player_id,
+                    'player_name': player_name,
+                    'player_id': player_id,
+                    'season_id': season_id
+                }
     
     return fbref_to_match_player
 
@@ -210,7 +216,7 @@ def populate_match_player_summary(conn, match_id, players_data, fbref_mapping):
         match_player_id = fbref_mapping[fbref_id]['match_player_id']
         season_id = fbref_mapping[fbref_id]['season_id']
         
-        # Generate match_player_summary_id from match_player_id
+        # Generate match_player_summary_id using same 8-digit suffix as match_player_id
         match_player_summary_id = 'mps_' + match_player_id[3:]  # Replace 'mp_' with 'mps_'
         
         stats = player_data['stats']
