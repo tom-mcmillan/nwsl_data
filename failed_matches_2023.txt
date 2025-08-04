@@ -1,0 +1,5 @@
+Failed matches from 2023 season processing:
+
+MATCH_ID | REASON
+---------|--------
+9467b1af 9bb6829b 9d2567b5 9d816b1c a1dc77b2 a37d3cfd aa5de61c ac1441ed b785dc25 b7d732c1 b9858345 bb5b4d67 bb90432b bd44bb43 c00c0e92 cb2cf7c8 cc101301 cc8f4050 ce23a8c3 cf8ab658 d2bd367f da63ca52 dcce831d dd811060 e094b273 e229e7d5 e9749264 eca1e88a ef2ef72c efd663a7 f6c8d2fc f80ba5a9 f862299e f88cc7e3 faedb1cf | Processing failed
