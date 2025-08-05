@@ -35,6 +35,7 @@ from .nwsl_analytics_engine import NWSLAnalyticsEngine, EntityType, AnalyticsCon
 from .analyzers.database_context_tool import DatabaseContextTool
 from .visualization_agent import NWSLDataVisualizationAgent
 from .intelligent_visualization_agent import IntelligentVisualizationAgent
+from .simple_chart_generator import SimpleChartGenerator
 
 # Configure logging for MCP (stderr only, no stdout)
 logging.basicConfig(level=logging.ERROR, format='%(levelname)s: %(message)s')
@@ -48,6 +49,7 @@ analytics_engine = NWSLAnalyticsEngine(str(DB_PATH))
 db_context = DatabaseContextTool(str(DB_PATH))
 visualization_agent = NWSLDataVisualizationAgent(analytics_engine)
 intelligent_viz_agent = IntelligentVisualizationAgent()
+simple_chart_generator = SimpleChartGenerator(str(DB_PATH))
 
 def safe_json_response(data: Any) -> str:
     """Safely convert data to JSON string"""
@@ -512,6 +514,57 @@ def create_contextual_visualization(
     except Exception as e:
         logger.error(f"Error in create_contextual_visualization: {e}")
         return safe_json_response({"error": f"Contextual visualization failed: {str(e)}"})
+
+@mcp.tool()
+def create_chart(user_request: str) -> str:
+    """
+    Simple, direct chart generation that actually works.
+    
+    No complex reasoning - just: Request → Data → Plotly Chart → Result
+    
+    Examples:
+    - "chart about courage" → Courage player radar chart
+    - "team goals" → Top scoring teams bar chart  
+    - "season overview" → League summary visualization
+    
+    Args:
+        user_request: What you want to visualize
+        
+    Returns:
+        Working Plotly chart JSON that displays in the interface
+    """
+    try:
+        logger.info(f"Direct chart request: {user_request}")
+        
+        # Use simple chart generator - no complex reasoning
+        chart_result = simple_chart_generator.generate_chart(user_request)
+        
+        if "error" in chart_result:
+            logger.error(f"Chart generation error: {chart_result['error']}")
+            return safe_json_response(chart_result)
+        
+        # Return successful chart
+        result = {
+            "success": True,
+            "chart_type": chart_result.get("chart_type", "unknown"),
+            "title": chart_result.get("title", "NWSL Data Visualization"),
+            "plotly_json": chart_result.get("plotly_json"),
+            "description": chart_result.get("description", "Interactive NWSL data chart"),
+            "insights": chart_result.get("insights", []),
+            "methodology": "Direct database query → Plotly chart generation",
+            "user_request": user_request
+        }
+        
+        logger.info(f"Chart generated successfully: {chart_result.get('chart_type')}")
+        return safe_json_response(result)
+        
+    except Exception as e:
+        logger.error(f"Error in create_chart: {e}")
+        return safe_json_response({
+            "error": f"Chart creation failed: {str(e)}",
+            "user_request": user_request,
+            "suggestion": "Try requests like 'team goals', 'courage players', or 'season overview'"
+        })
 
 @mcp.tool()
 def create_player_performance_radar(
