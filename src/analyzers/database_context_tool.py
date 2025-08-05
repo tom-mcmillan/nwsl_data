@@ -52,7 +52,7 @@ class DatabaseContextTool:
                     """, conn).iloc[0]['with_stats']
                 
                 player_stats_coverage = pd.read_sql_query("""
-                    SELECT COUNT(*) as with_goals FROM match_player WHERE summary_perf_gls IS NOT NULL
+                    SELECT COUNT(*) as with_goals FROM match_player_summary WHERE goals IS NOT NULL
                     """, conn).iloc[0]['with_goals']
                 
                 return {
