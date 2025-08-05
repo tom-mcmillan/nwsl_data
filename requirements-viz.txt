@@ -1,0 +1,7 @@
+# Visualization Agent Dependencies
+openai-agents>=0.1.0
+plotly>=5.17.0
+kaleido>=0.2.1  # For static image export
+pandas>=2.0.0
+numpy>=1.24.0
+pillow>=10.0.0  # For image processing

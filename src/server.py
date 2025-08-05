@@ -33,6 +33,7 @@ import uvicorn
 # Import unified analytics intelligence system
 from .nwsl_analytics_engine import NWSLAnalyticsEngine, EntityType, AnalyticsContext
 from .analyzers.database_context_tool import DatabaseContextTool
+from .visualization_agent import NWSLDataVisualizationAgent
 
 # Configure logging for MCP (stderr only, no stdout)
 logging.basicConfig(level=logging.ERROR, format='%(levelname)s: %(message)s')
@@ -44,6 +45,7 @@ DB_PATH = Path(__file__).parent.parent / "data" / "processed" / "nwsldata.db"
 # Initialize unified analytics intelligence system
 analytics_engine = NWSLAnalyticsEngine(str(DB_PATH))
 db_context = DatabaseContextTool(str(DB_PATH))
+visualization_agent = NWSLDataVisualizationAgent(analytics_engine)
 
 def safe_json_response(data: Any) -> str:
     """Safely convert data to JSON string"""
@@ -404,6 +406,258 @@ def validate_analytics_query(team_name: Optional[str] = None, season_id: Optiona
         logger.error(f"Error in validate_analytics_query: {e}")
         return safe_json_response({"error": f"Analytics query validation failed: {str(e)}"})
 
+@mcp.tool()
+def create_intelligent_visualization(
+    user_query: str,
+    entity_type: str = "auto-detect",
+    entity_name: str = "",
+    season_id: int = 2024
+) -> str:
+    """
+    AI-powered visualization agent that creates compelling charts for NWSL data.
+    
+    Uses multi-step agent reasoning to:
+    1. Analyze user query and available data
+    2. Consider multiple visualization options  
+    3. Select optimal chart type and styling
+    4. Generate interactive Plotly visualizations
+    5. Provide explanatory insights
+    
+    Args:
+        user_query: What the user wants to understand/visualize
+        entity_type: Type of analysis (player, team, match, or auto-detect)
+        entity_name: Specific player/team name (optional)
+        season_id: Season year for context (default: 2024)
+        
+    Returns:
+        Interactive Plotly visualization with agent reasoning and insights
+    """
+    try:
+        # Auto-detect entity type from query if needed
+        if entity_type == "auto-detect":
+            if any(word in user_query.lower() for word in ["player", "scorer", "assist", "performance"]):
+                entity_type = "player"
+            elif any(word in user_query.lower() for word in ["team", "club", "squad"]):
+                entity_type = "team"
+            elif any(word in user_query.lower() for word in ["match", "game", "fixture"]):
+                entity_type = "match"
+            else:
+                entity_type = "league"  # General league analysis
+        
+        # Get relevant data based on query
+        analytics_context = AnalyticsContext(season_id=season_id)
+        
+        if entity_type == "player" and entity_name:
+            analytics_data = analytics_engine.calculate_advanced_metrics(
+                EntityType.PLAYER, entity_name, analytics_context
+            )
+            context_description = f"Player analysis for {entity_name} in {season_id}"
+            
+        elif entity_type == "team" and entity_name:
+            analytics_data = analytics_engine.calculate_advanced_metrics(
+                EntityType.TEAM, entity_name, analytics_context
+            )
+            context_description = f"Team analysis for {entity_name} in {season_id}"
+            
+        else:
+            # Default to database overview for general queries
+            analytics_data = db_context.get_database_overview()
+            context_description = f"League overview for {season_id}"
+        
+        # Use visualization agent to create intelligent chart
+        import asyncio
+        
+        try:
+            # Try to use async agent
+            visualization_result = asyncio.run(
+                visualization_agent.create_intelligent_visualization(
+                    user_query=user_query,
+                    data=analytics_data,
+                    context=context_description
+                )
+            )
+        except Exception as agent_error:
+            logger.warning(f"Agent visualization failed, using fallback: {agent_error}")
+            # Fallback to rule-based visualization
+            visualization_result = visualization_agent._fallback_visualization(
+                user_query, analytics_data, context_description
+            )
+        
+        result = {
+            "visualization_type": "AI Agent Generated",
+            "user_query": user_query,
+            "entity_type": entity_type,
+            "entity_name": entity_name,
+            "season": season_id,
+            "visualization": visualization_result,
+            "data_source": "NWSL Advanced Analytics Engine",
+            "methodology": "Multi-step agent reasoning with Plotly visualization generation"
+        }
+        
+        return safe_json_response(result)
+        
+    except Exception as e:
+        logger.error(f"Error in create_intelligent_visualization: {e}")
+        return safe_json_response({"error": f"Intelligent visualization failed: {str(e)}"})
+
+@mcp.tool()
+def create_player_performance_radar(
+    player_name: str,
+    season_id: int = 2024,
+    comparison_player: str = ""
+) -> str:
+    """
+    Create radar chart visualization for player performance using AI agent.
+    
+    Shows NIR breakdown (attacking, defensive, progression impacts) with optional comparison.
+    
+    Args:
+        player_name: Player name (full or partial)
+        season_id: Season year 
+        comparison_player: Optional second player for comparison
+        
+    Returns:
+        Interactive radar chart with NIR component analysis
+    """
+    try:
+        context = AnalyticsContext(season_id=season_id)
+        
+        # Get primary player data
+        player_data = analytics_engine.calculate_advanced_metrics(
+            EntityType.PLAYER, player_name, context
+        )
+        
+        if 'error' in player_data:
+            return safe_json_response({"error": f"Player data error: {player_data['error']}"})
+        
+        nir_breakdown = player_data.get('nir_breakdown', {})
+        
+        # Get comparison data if requested
+        comparison_values = None
+        if comparison_player:
+            comparison_data = analytics_engine.calculate_advanced_metrics(
+                EntityType.PLAYER, comparison_player, context
+            )
+            if 'error' not in comparison_data:
+                comparison_nir = comparison_data.get('nir_breakdown', {})
+                comparison_values = list(comparison_nir.values())
+        
+        # Create radar chart using agent tool
+        radar_result = visualization_agent._create_radar_chart(
+            categories=list(nir_breakdown.keys()),
+            values=list(nir_breakdown.values()),
+            title=f"{player_name} - NWSL Impact Rating Breakdown ({season_id})",
+            entity_name=player_name,
+            comparison_values=comparison_values,
+            comparison_name=comparison_player if comparison_player else "League Average"
+        )
+        
+        result = {
+            "visualization_type": "Player Performance Radar Chart",
+            "player": player_name,
+            "comparison_player": comparison_player or None,
+            "season": season_id,
+            "nir_score": player_data.get('nir_score'),
+            "visualization": radar_result,
+            "insights": f"Radar chart reveals {player_name}'s strength distribution across NIR components"
+        }
+        
+        return safe_json_response(result)
+        
+    except Exception as e:
+        logger.error(f"Error in create_player_performance_radar: {e}")
+        return safe_json_response({"error": f"Player radar chart failed: {str(e)}"})
+
+@mcp.tool()
+def create_team_comparison_chart(
+    team1_name: str,
+    team2_name: str,
+    season_id: int = 2024,
+    chart_type: str = "auto"
+) -> str:
+    """
+    Create intelligent team comparison visualization using AI agent.
+    
+    Agent decides optimal chart type (radar, bar, scatter) based on data patterns.
+    
+    Args:
+        team1_name: First team name
+        team2_name: Second team name  
+        season_id: Season year
+        chart_type: Chart type preference (auto, radar, bar, scatter)
+        
+    Returns:
+        AI-selected optimal visualization for team comparison
+    """
+    try:
+        context = AnalyticsContext(season_id=season_id)
+        
+        # Get team analytics data
+        team1_data = analytics_engine.calculate_advanced_metrics(
+            EntityType.TEAM, team1_name, context
+        )
+        team2_data = analytics_engine.calculate_advanced_metrics(
+            EntityType.TEAM, team2_name, context
+        )
+        
+        if 'error' in team1_data:
+            return safe_json_response({"error": f"Team 1 data error: {team1_data['error']}"})
+        if 'error' in team2_data:
+            return safe_json_response({"error": f"Team 2 data error: {team2_data['error']}"})
+        
+        # Prepare comparison data
+        comparison_data = {
+            "teams": [team1_name, team2_name],
+            "team1_analytics": team1_data,
+            "team2_analytics": team2_data,
+            "nir_differential": team1_data.get('nir_score', 0) - team2_data.get('nir_score', 0)
+        }
+        
+        # Use agent for intelligent visualization choice
+        query = f"Compare {team1_name} vs {team2_name} team performance in {season_id}"
+        
+        import asyncio
+        try:
+            visualization_result = asyncio.run(
+                visualization_agent.create_intelligent_visualization(
+                    user_query=query,
+                    data=comparison_data,
+                    context="team_comparison"
+                )
+            )
+        except Exception:
+            # Fallback: Create radar comparison
+            team1_nir = team1_data.get('nir_breakdown', {})
+            team2_nir = team2_data.get('nir_breakdown', {})
+            
+            if chart_type in ["auto", "radar"] and team1_nir and team2_nir:
+                visualization_result = visualization_agent._create_radar_chart(
+                    categories=list(team1_nir.keys()),
+                    values=list(team1_nir.values()),
+                    title=f"{team1_name} vs {team2_name} - NIR Comparison ({season_id})",
+                    entity_name=team1_name,
+                    comparison_values=list(team2_nir.values()),
+                    comparison_name=team2_name
+                )
+            else:
+                visualization_result = {"message": "Comparison chart generation in progress"}
+        
+        result = {
+            "visualization_type": "Intelligent Team Comparison",
+            "teams": [team1_name, team2_name],
+            "season": season_id,
+            "nir_differential": comparison_data["nir_differential"],
+            "advantage": team1_name if comparison_data["nir_differential"] > 0 else team2_name,
+            "visualization": visualization_result,
+            "methodology": "AI agent selected optimal visualization based on data patterns"
+        }
+        
+        return safe_json_response(result)
+        
+    except Exception as e:
+        logger.error(f"Error in create_team_comparison_chart: {e}")
+        return safe_json_response({"error": f"Team comparison chart failed: {str(e)}"})
+
 if __name__ == "__main__":
     # Run as HTTP server for remote MCP access (Cloud Run deployment)
     port = int(os.environ.get("PORT", 8000))
@@ -420,6 +674,7 @@ if __name__ == "__main__":
             logger.info(f"✅ Database connected: {overview.get('total_seasons', 'unknown')} seasons, {overview.get('total_matches', 'unknown')} matches")
             logger.info("🧠 Advanced Analytics Intelligence Engine initialized")
             logger.info("📊 NWSL Impact Rating (NIR) system ready")
+            logger.info("🎨 AI Visualization Agent ready - Plotly charts with multi-step reasoning")
         except Exception as e:
             logger.error(f"❌ Analytics system initialization failed: {e}")
             raise
