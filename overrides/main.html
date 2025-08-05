@@ -152,5 +152,59 @@
 .md-tabs__link--active {
   color: #ffffff !important;
 }
+
+/* FIX: Prevent dark overlays and z-index issues */
+* {
+  box-sizing: border-box !important;
+}
+
+.md-main__inner {
+  background-color: #ffffff !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.md-content__inner {
+  background-color: #ffffff !important;
+}
+
+/* FIX: Remove any pseudo-element overlays */
+.md-main::before,
+.md-main::after,
+.md-content::before, 
+.md-content::after,
+.md-main__inner::before,
+.md-main__inner::after {
+  display: none !important;
+}
+
+/* FIX: Ensure content is visible above any overlays */
+.md-typeset {
+  position: relative !important;
+  z-index: 10 !important;
+  background-color: #ffffff !important;
+}
+
+/* FIX: Force white background on container elements */
+.md-container {
+  background-color: #ffffff !important;
+}
+
+.md-grid {
+  background-color: #ffffff !important;
+}
+
+/* FIX: Remove any dark theme remnants */
+[data-md-color-scheme="default"] {
+  background-color: #ffffff !important;
+}
+
+html {
+  background-color: #ffffff !important;
+}
+
+body {
+  background-color: #ffffff !important;
+}
 </style>
 {% endblock %}
