@@ -31,11 +31,12 @@ from mcp.server.fastmcp import FastMCP
 import uvicorn
 
 # Import unified analytics intelligence system
-from .nwsl_analytics_engine import NWSLAnalyticsEngine, EntityType, AnalyticsContext
-from .analyzers.database_context_tool import DatabaseContextTool
-from .visualization_agent import NWSLDataVisualizationAgent
-from .intelligent_visualization_agent import IntelligentVisualizationAgent
-from .simple_chart_generator import SimpleChartGenerator
+from .core.analytics_engine import NWSLAnalyticsEngine, EntityType, AnalyticsContext
+from .core.database_context import DatabaseContextTool
+from .visualization.legacy_charts import NWSLDataVisualizationAgent
+from .visualization.ai_charts import IntelligentVisualizationAgent
+from .visualization.simple_charts import SimpleChartGenerator
+from .utils.response_helpers import safe_json_response
 
 # Configure logging for MCP (stderr only, no stdout)
 logging.basicConfig(level=logging.ERROR, format='%(levelname)s: %(message)s')
@@ -51,12 +52,7 @@ visualization_agent = NWSLDataVisualizationAgent(analytics_engine)
 intelligent_viz_agent = IntelligentVisualizationAgent()
 simple_chart_generator = SimpleChartGenerator(str(DB_PATH))
 
-def safe_json_response(data: Any) -> str:
-    """Safely convert data to JSON string"""
-    try:
-        return json.dumps(data, indent=2, default=str)
-    except Exception as e:
-        return json.dumps({"error": f"JSON serialization failed: {str(e)}"})
+# safe_json_response now imported from utils
 
 # Initialize FastMCP server with advanced analytics identity
 mcp = FastMCP("NWSL Advanced Analytics Intelligence")

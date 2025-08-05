@@ -1,0 +1,43 @@
+# Production environment configuration
+server:
+  name: "NWSL Advanced Analytics Intelligence"
+  version: "1.0.0"
+  debug: false
+  port: 8000
+  host: "0.0.0.0"
+  reload: false
+  workers: 4
+
+database:
+  path: "../data/processed/nwsldata.db"
+  timeout: 60
+  pool_size: 20
+  echo_sql: false
+
+analytics:
+  nir_calculation:
+    enable_caching: true
+    cache_ttl: 3600
+    debug_mode: false
+  
+  visualization:
+    default_chart_size: [800, 600]
+    enable_agent_fallback: true
+    cache_charts: true
+    chart_cache_ttl: 1800
+
+logging:
+  level: "INFO"
+  format: "%(levelname)s: %(message)s"
+  file: null  # Use Cloud Run logging
+
+tools:
+  player_search_limit: 10
+  match_results_limit: 25
+  team_history_seasons: 5
+  enable_experimental_features: false
+
+performance:
+  request_timeout: 30
+  max_concurrent_requests: 100
+  enable_compression: true

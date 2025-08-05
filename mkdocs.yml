@@ -59,10 +59,15 @@ nav:
     - Mission & Vision: about/mission.md
     - Methodology: about/methodology.md
     - Why Advanced Analytics: about/why-advanced-analytics.md
+  - Platform:
+    - NIR Composite Metrics: platform/nir-metrics.md
+  - MCP Server:
+    - Architecture: mcp/architecture.md
+    - Tools Reference: mcp/tools.md
   - Data Foundation:
+    - Database Schema: data/database-overview.md
     - Coverage & Quality: data/coverage.md
     - Data Sources: data/sources.md
-    - Database Overview: data/database-overview.md
 
 # Extra configuration
 extra:

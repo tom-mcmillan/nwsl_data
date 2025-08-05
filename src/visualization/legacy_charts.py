@@ -36,7 +36,7 @@ except ImportError:
     
     logging.warning("OpenAI Agents SDK not installed. Run: pip install openai-agents")
 
-from .nwsl_analytics_engine import NWSLAnalyticsEngine, EntityType, AnalyticsContext
+from ..core.analytics_engine import NWSLAnalyticsEngine, EntityType, AnalyticsContext
 
 logger = logging.getLogger(__name__)
 

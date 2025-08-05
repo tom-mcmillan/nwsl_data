@@ -1,0 +1,36 @@
+# Development environment configuration
+server:
+  name: "NWSL Analytics - Development"
+  version: "1.0.0-dev"
+  debug: true
+  port: 8000
+  host: "localhost"
+  reload: true
+
+database:
+  path: "../data/processed/nwsldata.db"
+  timeout: 30
+  pool_size: 5
+  echo_sql: true
+
+analytics:
+  nir_calculation:
+    enable_caching: false
+    cache_ttl: 300
+    debug_mode: true
+  
+  visualization:
+    default_chart_size: [800, 600]
+    enable_agent_fallback: true
+    cache_charts: false
+
+logging:
+  level: "DEBUG"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "dev-notes/logs/development.log"
+
+tools:
+  player_search_limit: 20
+  match_results_limit: 50
+  team_history_seasons: 10
+  enable_experimental_features: true

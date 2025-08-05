@@ -1,0 +1,5 @@
+# Production dependencies (minimal for deployment)
+-r visualization.txt
+
+# Production-specific packages
+gunicorn>=21.0.0
