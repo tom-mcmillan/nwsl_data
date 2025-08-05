@@ -1,0 +1,19 @@
+name: Trigger Documentation Sync
+
+on:
+  push:
+    branches: [main]
+    paths: ['docs/**']
+
+jobs:
+  trigger-sync:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Trigger nwsl_data_platform docs sync
+      run: |
+        curl -X POST \
+          -H "Accept: application/vnd.github.v3+json" \
+          -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+          https://api.github.com/repos/tom-mcmillan/nwsl_data_platform/dispatches \
+          -d '{"event_type":"docs-updated"}'
