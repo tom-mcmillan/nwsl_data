@@ -482,9 +482,8 @@ class NWSLDataVisualizationAgent:
         """Fallback rule-based visualization when agent is unavailable"""
         
         try:
-            # Simple rule-based logic for common cases
+            # NIR breakdown charts
             if "nir" in user_query.lower() or "breakdown" in user_query.lower():
-                # Create NIR breakdown chart
                 nir_breakdown = data.get('nir_breakdown', {})
                 if nir_breakdown:
                     return self._create_radar_chart(
@@ -494,16 +493,98 @@ class NWSLDataVisualizationAgent:
                         entity_name=data.get('entity_id', 'Entity')
                     )
             
+            # Comparison charts
             elif "comparison" in user_query.lower() or "vs" in user_query.lower():
-                # Create comparison chart
-                # This would need more sophisticated data parsing
-                pass
+                # Look for team analytics comparison data
+                if 'teams' in data and isinstance(data['teams'], dict):
+                    team_names = list(data['teams'].keys())
+                    if len(team_names) >= 2:
+                        team1_nir = data['teams'][team_names[0]].get('nir_breakdown', {})
+                        team2_nir = data['teams'][team_names[1]].get('nir_breakdown', {})
+                        if team1_nir and team2_nir:
+                            return self._create_radar_chart(
+                                categories=list(team1_nir.keys()),
+                                values=list(team1_nir.values()),
+                                title=f"{team_names[0]} vs {team_names[1]} - NIR Comparison",
+                                entity_name=team_names[0],
+                                comparison_values=list(team2_nir.values()),
+                                comparison_name=team_names[1]
+                            )
             
-            # Default: simple summary chart
+            # Season/league data - create bar chart of top teams
+            elif any(word in user_query.lower() for word in ["season", "league", "teams", "top"]):
+                if 'top_teams' in data:
+                    teams_data = data['top_teams']
+                    if isinstance(teams_data, list) and teams_data:
+                        teams = [team.get('team_name', f'Team {i}') for i, team in enumerate(teams_data)]
+                        goals = [team.get('total_goals', 0) for team in teams_data]
+                        return self._create_comparison_bar_chart(
+                            entities=teams,
+                            values=goals,
+                            title="Top Scoring Teams",
+                            metric_name="Goals Scored"
+                        )
+                
+                # Fallback for any numeric data in season summary
+                elif 'season_summary' in data:
+                    summary = data['season_summary']
+                    if 'top_teams' in summary:
+                        teams_info = summary['top_teams']
+                        if isinstance(teams_info, dict):
+                            teams = list(teams_info.keys())
+                            values = list(teams_info.values())
+                            return self._create_comparison_bar_chart(
+                                entities=teams,
+                                values=values,
+                                title="Season Leaders",
+                                metric_name="Performance Score"
+                            )
+            
+            # Player performance data
+            elif "player" in user_query.lower() or "performance" in user_query.lower():
+                if 'nir_breakdown' in data:
+                    nir_breakdown = data['nir_breakdown']
+                    return self._create_radar_chart(
+                        categories=list(nir_breakdown.keys()),
+                        values=list(nir_breakdown.values()),
+                        title="Player Performance Profile",
+                        entity_name=data.get('entity_id', 'Player')
+                    )
+            
+            # Default: try to find any plottable data
+            # Look for lists of numbers or simple key-value pairs
+            plottable_data = None
+            for key, value in data.items():
+                if isinstance(value, dict) and len(value) > 2:
+                    # Found a dictionary with multiple entries - could be categorical data
+                    categories = list(value.keys())
+                    values = []
+                    for v in value.values():
+                        if isinstance(v, (int, float)):
+                            values.append(v)
+                        else:
+                            break
+                    else:
+                        # All values are numeric
+                        if len(values) >= 3:  # Need at least 3 points for a good chart
+                            return self._create_comparison_bar_chart(
+                                entities=categories,
+                                values=values,
+                                title="Data Visualization",
+                                metric_name=key.replace('_', ' ').title()
+                            )
+            
+            # Last resort: return informative message with data structure
             return {
-                "chart_type": "summary",
-                "message": "Fallback visualization - install openai-agents for intelligent chart selection",
-                "data_summary": str(data)[:500] + "..." if len(str(data)) > 500 else str(data)
+                "chart_type": "info",
+                "message": "Visualization agent in fallback mode - basic chart generation available",
+                "note": "For advanced AI-powered visualizations, OpenAI Agents SDK integration needed",
+                "data_structure": {k: type(v).__name__ for k, v in data.items()},
+                "suggested_queries": [
+                    "Use 'nir breakdown' for radar charts",
+                    "Use 'comparison' for team vs team analysis", 
+                    "Specify 'player' or 'team' for focused analysis"
+                ]
             }
             
         except Exception as e:
