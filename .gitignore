@@ -12,6 +12,9 @@ venv/
 # Jupyter Notebook
 .ipynb_checkpoints
 
+# MkDocs build output
+site/
+
 # Database files (can be large) - but include our main database for deployment
 *.db-shm
 *.db-wal

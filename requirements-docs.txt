@@ -1,0 +1,21 @@
+# MkDocs Material Dependencies for NWSL Analytics Documentation
+
+# Core MkDocs
+mkdocs>=1.6.0
+mkdocs-material>=9.6.0
+
+# Essential Plugins
+mkdocs-minify-plugin>=0.8.0
+mkdocs-git-revision-date-localized-plugin>=1.2.0
+mkdocs-git-committers-plugin-2>=2.2.0
+
+# Advanced Extensions
+pymdown-extensions>=10.7.0
+markdown-include>=0.8.1
+
+# Social Cards (Optional - requires additional setup)
+# pillow>=10.0.0
+# cairosvg>=2.7.0
+
+# Development Tools
+mkdocs-serve>=1.6.0
