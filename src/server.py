@@ -25,7 +25,8 @@ import sqlite3
 import pandas as pd
 
 # Add project root to path for imports
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, project_root)
 
 from mcp.server.fastmcp import FastMCP
 import uvicorn
@@ -34,12 +35,12 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse, HTMLResponse, RedirectResponse
 
 # Import unified analytics intelligence system
-from core.analytics_engine import NWSLAnalyticsEngine, EntityType, AnalyticsContext
-from core.database_context import DatabaseContextTool
-from visualization.legacy_charts import NWSLDataVisualizationAgent
-from visualization.ai_charts import IntelligentVisualizationAgent
-from visualization.simple_charts import SimpleChartGenerator
-from utils.response_helpers import safe_json_response
+from src.core.analytics_engine import NWSLAnalyticsEngine, EntityType, AnalyticsContext
+from src.core.database_context import DatabaseContextTool
+from src.visualization.legacy_charts import NWSLDataVisualizationAgent
+from src.visualization.ai_charts import IntelligentVisualizationAgent
+from src.visualization.simple_charts import SimpleChartGenerator
+from src.utils.response_helpers import safe_json_response
 
 # Configure logging for MCP (stderr only, no stdout)
 logging.basicConfig(level=logging.ERROR, format='%(levelname)s: %(message)s')
