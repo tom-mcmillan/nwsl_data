@@ -126,14 +126,6 @@ plugins:
       separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
       lang: en
       min_search_length: 2
-  - minify:
-      minify_html: true
-      minify_css: true
-      minify_js: true
-      htmlmin_opts:
-        remove_comments: true
-        remove_empty_space: true
-        reduce_boolean_attributes: true
 
 # Custom CSS for OpenAI-inspired Theme
 extra_css:
