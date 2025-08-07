@@ -1,4 +1,4 @@
-name: Deploy Documentation
+name: Deploy Documentation to GitHub Pages
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
     paths:
       - 'docs/**'
       - 'mkdocs.yml'
-      - '.github/workflows/deploy-docs.yml'
+      - '.github/workflows/docs.yml'
   workflow_dispatch:
 
 permissions:
@@ -32,17 +32,12 @@ jobs:
           
       - name: Install dependencies
         run: |
-          pip install mkdocs>=1.6.0
-          pip install mkdocs-material>=9.6.0
-          pip install mkdocs-minify-plugin>=0.8.0
-          pip install mkdocs-git-revision-date-localized-plugin>=1.2.0
-          pip install mkdocs-git-committers-plugin-2>=2.2.0
-          pip install pymdown-extensions>=10.7.0
-          pip install markdown-include>=0.8.1
+          pip install -r requirements-docs.txt
           
       - name: Build documentation
-        run: mkdocs build
-        
+        run: |
+          mkdocs build
+          
       - name: Setup Pages
         uses: actions/configure-pages@v4
         

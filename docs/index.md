@@ -79,8 +79,8 @@ Explore our documentation to understand:
 
 1. **[Our Methodology](about/methodology.md)** → How we apply sabermetrics principles to soccer
 2. **[Data Foundation](data/coverage.md)** → The comprehensive database powering our analysis
-3. **[Analytics Engine](analytics/beyond-basic-stats.md)** → Why we moved beyond basic statistics
-4. **[Platform Architecture](platform/architecture.md)** → How our intelligence system works
+3. **[Analytics Platform](platform/index.md)** → Our advanced analytical capabilities
+4. **[MCP Architecture](mcp/architecture.md)** → How our intelligence system works
 
 ## Transparency & Trust
 

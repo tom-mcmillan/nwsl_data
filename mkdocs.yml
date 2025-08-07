@@ -3,7 +3,7 @@
 
 # Project Information  
 site_name: NWSL Advanced Analytics Intelligence
-site_url: https://platform.nwsldata.com/docs/
+site_url: https://tom-mcmillan.github.io/nwsl_data/
 site_author: NWSL Analytics Team
 site_description: >
   Comprehensive documentation for the NWSL Advanced Analytics Intelligence 
@@ -14,8 +14,8 @@ repo_name: tom-mcmillan/nwsl_data
 repo_url: https://github.com/tom-mcmillan/nwsl_data
 edit_uri: edit/main/docs/
 
-# Build Directory Configuration - MCP Server Integration
-site_dir: site
+# Build Directory Configuration - GitHub Pages
+site_dir: site  
 docs_dir: docs
 
 # Theme Configuration - Minimal Material Theme
