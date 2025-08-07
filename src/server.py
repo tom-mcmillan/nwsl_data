@@ -774,7 +774,7 @@ def setup_documentation_routes(app: FastAPI):
         
         return HTMLResponse("<h1>Page not found</h1>", status_code=404)
 
-if __name__ == "__main__":
+if __name__ == "__main__" or __name__ == "src.server":
     # Run as HTTP server for remote MCP access (Cloud Run deployment)
     port = int(os.environ.get("PORT", 8000))
     
@@ -801,9 +801,9 @@ if __name__ == "__main__":
         # Get FastMCP streamable HTTP app for Cloud Run deployment
         app = mcp.streamable_http_app()
         
-        # Set up documentation routes
-        setup_documentation_routes(app)
-        logger.info("📖 Documentation serving enabled at /docs/")
+        # Note: Documentation routes disabled for now - FastMCP uses Starlette, not FastAPI
+        # TODO: Implement documentation serving with Starlette routing
+        logger.info("📖 Documentation serving temporarily disabled (FastMCP app incompatibility)")
         
         # Run with uvicorn for Cloud Run
         uvicorn.run(
