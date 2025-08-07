@@ -18,65 +18,16 @@ edit_uri: edit/main/docs/
 site_dir: site
 docs_dir: docs
 
-# Theme Configuration - OpenAI Inspired Professional Design
+# Theme Configuration - Minimal Material Theme
 theme:
   name: material
   language: en
   
-  # Color Palette - Clean professional theme
+  # Simple color palette
   palette:
     - scheme: default
-      primary: black
-      accent: blue
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
-    - scheme: slate
-      primary: black
-      accent: blue
-      toggle:
-        icon: material/brightness-4
-        name: Switch to light mode
-  
-  # Professional Typography
-  font:
-    text: Inter
-    code: JetBrains Mono
-  
-  # Logo and Branding
-  logo: assets/images/favicon.png
-  favicon: assets/images/favicon.png
-  
-  # Advanced Features
-  features:
-    # Navigation
-    - navigation.instant        # SPA-like navigation
-    - navigation.instant.prefetch  # Prefetch on hover
-    - navigation.instant.progress  # Progress indicator
-    - navigation.tracking       # Update URL with anchor
-    - navigation.tabs           # Top-level tabs
-    - navigation.tabs.sticky    # Sticky tabs
-    - navigation.indexes        # Section index pages
-    - navigation.top            # Back to top button
-    - navigation.footer         # Prev/next navigation
-    
-    # Search Enhancement
-    - search.suggest            # Search suggestions
-    - search.highlight          # Highlight search terms
-    - search.share             # Share search results
-    
-    # Header Behavior
-    - header.autohide          # Auto-hide on scroll
-    
-    # Content Features
-    - content.code.copy        # Copy code blocks
-    - content.code.annotate    # Code annotations
-    - content.tabs.link        # Link content tabs
-    - content.tooltips         # Enhanced tooltips
-    
-    # Table of Contents
-    - toc.follow               # Follow anchor links
-    - toc.integrate           # Integrate with navigation
+      primary: indigo
+      accent: indigo
 
 # Advanced Markdown Extensions
 markdown_extensions:
@@ -127,34 +78,15 @@ plugins:
       lang: en
       min_search_length: 2
 
-# Custom CSS for OpenAI-inspired Theme
-extra_css:
-  - stylesheets/nwsl-analytics-theme.css
+# Custom CSS disabled for baseline testing
+# extra_css:
+#   - stylesheets/nwsl-analytics-theme.css
 
-# Additional Configuration
+# Minimal configuration
 extra:
-  analytics:
-    provider: google
-    property: G-XXXXXXXXXX
-    feedback:
-      title: Was this page helpful?
-      ratings:
-        - icon: material/emoticon-happy-outline
-          name: This page was helpful
-          data: 1
-          note: >-
-            Thanks for your feedback!
-        - icon: material/emoticon-sad-outline
-          name: This page could be improved
-          data: 0
-          note: >-
-            Thanks for your feedback! Help us improve this page by
-            <a href="..." target="_blank" rel="noopener">telling us what you found confusing</a>.
-  
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/tom-mcmillan/nwsl_data
-      name: NWSL Analytics on GitHub
 
 # Navigation Structure - Available Documentation
 nav:
