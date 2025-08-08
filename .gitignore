@@ -59,4 +59,13 @@ Thumbs.db
 
 # Temporary files
 *.tmp
-*.temp
+*.temp.DS_Store
+*.swp
+__pycache__/
+*.pyc
+.venv/
+.env
+.env.*
+!.env.example
+data/**/*.db
+data/**/*.sqlite
