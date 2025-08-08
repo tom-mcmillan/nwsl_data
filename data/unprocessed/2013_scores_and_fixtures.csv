@@ -1,0 +1,186 @@
+﻿player_id,Player,Nation,Pos,Squad,Age,Born,MP,Starts,Min,90s,Gls,Ast,G_plus_A,G_minusPK,PK,PKatt,CrdY,CrdR,Gls_per90,Ast_per90,G_plus_A_per90,G_minus_PK_per90,G_plus_A_minus_PK_per90,Matches
+,Marisa Abegg,us USA,DF,Spirit,25,1987,5,4,410,4.6,0,0,0,0,0,0,0,0,0,0,0,0,0,Matches
+,Danesha Adams,us USA,"FW,MF",Sky Blue FC,26,1986,20,20,"1,663",18.5,3,3,6,2,1,1,0,0,0.16,0.16,0.32,0.11,0.27,Matches
+,Adriana,es ESP,FW,WNY Flash,26,1986,15,14,3,0,1,,,1,0,1,2,0,30,,,30,,Matches
+,Leigh Ann Brown,us USA,"DF,MF",Kansas City,26,1986,22,22,"1,900",21.1,0,5,5,0,0,0,1,0,0,0.24,0.24,0,0.24,Matches
+,Jazmyne Avant,us USA,DF,Boston Breakers,23,1990,11,11,990,11,0,1,1,0,0,0,0,0,0,0.09,0.09,0,0.09,Matches
+,Jazmyne Avant,us USA,DF,Thorns,23,1990,4,2,212,2.4,0,0,0,0,0,0,0,0,0,0,0,0,0,Matches
+,Ashley Baker,eng ENG,GK,Sky Blue FC,22,1990,1,0,1,0,,,,,0,0,,,,,,,,Matches
+,Amy Barczuk,us USA,DF,WNY Flash,22,1990,7,2,,0,0,,,0,0,0,0,0,,,,,,Matches
+,Lauren Barnes,us USA,DF,Reign,23,1989,22,22,"1,947",21.6,0,1,1,0,0,0,0,0,0,0.05,0.05,0,0.05,Matches
+,Nicole Barnhart,us USA,GK,Kansas City,31,1981,20,20,"1,800",20,,,,,0,0,,,,,,,,Matches
+,Michelle Betos,us USA,GK,Reign,24,1988,7,7,630,7,,,,,0,0,,,,,,,,Matches
+,Brittany Bock,us USA,"DF,MF",Sky Blue FC,25,1987,7,5,500,5.6,0,0,0,0,0,0,1,0,0,0,0,0,0,Matches
+,Liz Bogus,us USA,"FW,MF",Reign,28,1984,20,11,"1,009",11.2,1,2,3,1,0,0,0,0,0.09,0.18,0.27,0.09,0.27,Matches
+,Melanie Booth,ca CAN,DF,Sky Blue FC,28,1984,3,0,28,0.3,0,0,0,0,0,0,0,0,0,0,0,0,0,Matches
+,Shannon Boxx,us USA,MF,Red Stars,35,1977,2,1,123,1.4,0,0,0,0,0,0,0,0,0,0,0,0,0,Matches
+,Rachel Breton,us USA,"DF,FW",Sky Blue FC,22,1990,1,0,16,0.2,0,0,0,0,0,0,0,0,0,0,0,0,0,Matches
+,Jen Buczkowski,us USA,"DF,MF",Kansas City,27,1985,22,22,"1,980",22,0,2,2,0,0,0,0,0,0,0.09,0.09,0,0.09,Matches
+,Mariah Bullock,ws SAM,"DF,MF",Boston Breakers,21,1991,20,16,"1,408",15.6,3,1,4,3,0,0,1,0,0.19,0.06,0.26,0.19,0.26,Matches
+,Zakiya Bywaters,us USA,FW,Red Stars,21,1991,6,5,372,4.1,2,0,2,2,0,0,0,0,0.48,0,0.48,0.48,0.48,Matches
+,Brittany Cameron,us USA,GK,Sky Blue FC,26,1986,18,18,"1,619",18,,,,,0,0,,,,,,,,Matches
+,Tiffany Cameron,jm JAM,FW,Reign,21,1991,7,4,374,4.2,0,0,0,0,0,0,0,0,0,0,0,0,0,Matches
+,Tiffany Cameron,jm JAM,FW,Kansas City,21,1991,1,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Matches
+,Lori Chalupny,us USA,MF,Red Stars,29,1984,18,17,"1,500",16.7,5,4,9,5,0,0,3,0,0.3,0.24,0.54,0.3,0.54,Matches
+,Candace Chapman,ca CAN,DF,Spirit,29,1983,8,8,547,6.1,0,0,0,0,0,0,0,0,0,0,0,0,0,Matches
+,Kennya Cordner,tt TRI,FW,Reign,24,1988,3,2,123,1.4,0,0,0,0,0,0,0,0,0,0,0,0,0,Matches
+,Stephanie Cox,us USA,DF,Reign,26,1986,4,4,324,3.6,0,0,0,0,0,0,0,0,0,0,0,0,0,Matches
+,Renae Cuéllar,mx MEX,FW,Reign,22,1990,7,3,344,3.8,0,0,0,0,0,0,1,0,0,0,0,0,0,Matches
+,Renae Cuéllar,mx MEX,FW,Kansas City,22,1990,11,8,682,7.6,5,0,5,5,0,0,0,0,0.66,0,0.66,0.66,0.66,Matches
+,Lindsi Cutshall,us USA,DF,Sky Blue FC,22,1990,7,1,285,3.2,0,0,0,0,0,0,0,0,0,0,0,0,0,Matches
+,Kiersten Dallstream,us USA,"DF,FW",Reign,24,1988,20,14,"1,299",14.4,0,0,0,0,0,0,1,2,0,0,0,0,0,Matches
+,Lisa De Vanna,au AUS,FW,Sky Blue FC,28,1984,16,15,"1,289",14.3,5,2,7,5,0,1,1,0,0.35,0.14,0.49,0.35,0.49,Matches
+,Kate Deines,us USA,"DF,MF",Reign,23,1989,17,11,982,10.9,0,0,0,0,0,0,0,0,0,0,0,0,0,Matches
+,Vicki DiMartino,us USA,"DF,FW",WNY Flash,21,1991,12,4,2,0,1,,,1,0,0,1,0,45,,,45,,Matches
+,Maribel Domínguez,mx MEX,FW,Red Stars,34,1978,16,9,710,7.9,2,0,2,2,0,0,0,0,0.25,0,0.25,0.25,0.25,Matches
+,Marian Dougherty,us USA,DF,Thorns,28,1984,19,19,"1,666",18.5,1,1,2,1,0,0,2,0,0.05,0.05,0.11,0.05,0.11,Matches
+,Jo Dragotta,us USA,"DF,MF",Boston Breakers,21,1991,10,6,565,6.3,0,0,0,0,0,0,1,0,0,0,0,0,0,Matches
+,Becky Edwards,us USA,"DF,MF",Thorns,24,1988,10,10,900,10,0,0,0,0,0,0,3,0,0,0,0,0,0,Matches
+,Emily van Egmond,au AUS,MF,Reign,19,1993,6,4,296,3.3,0,0,0,0,0,0,1,0,0,0,0,0,0,Matches
+,Tina Ellertson,us USA,DF,Thorns,30,1982,3,0,40,0.4,0,0,0,0,0,0,0,0,0,0,0,0,0,Matches
+,Maddy Evans,us USA,"DF,MF",Boston Breakers,21,1991,11,2,370,4.1,0,0,0,0,0,0,0,0,0,0,0,0,0,Matches
+,Sinead Farrelly,ie IRL,MF,Kansas City,23,1989,16,10,896,10,1,0,1,1,0,0,0,0,0.1,0,0.1,0.1,0.1,Matches
+,Jess Fishlock,wls WAL,MF,Reign,26,1987,21,21,"1,876",20.8,4,0,4,4,0,0,4,0,0.19,0,0.19,0.19,0.19,Matches
+,Caitlin Foord,au AUS,"DF,FW",Sky Blue FC,18,1994,15,15,"1,290",14.3,0,1,1,0,0,0,1,0,0,0.07,0.07,0,0.07,Matches
+,Lauren Fowlkes,us USA,"DF,FW",Red Stars,24,1988,4,4,291,3.2,0,0,0,0,0,0,0,0,0,0,0,0,0,Matches
+,Danielle Foxhoven,us USA,"FW,MF",Thorns,23,1989,21,7,997,11.1,4,0,4,4,0,0,1,0,0.36,0,0.36,0.36,0.36,Matches
+,Adrianna Franch,us USA,GK,WNY Flash,22,1990,22,22,"1,978",22,,,,,0,0,,,,,,,,Matches
+,Katy Freels,us USA,MF,Sky Blue FC,22,1990,22,21,"1,847",20.5,1,6,7,1,0,0,0,0,0.05,0.29,0.34,0.05,0.34,Matches
+,Jaime French,us USA,FW,Kansas City,23,1989,1,0,11,0.1,0,0,0,0,0,0,0,0,0,0,0,0,0,Matches
+,Sonja Fuss,de GER,DF,Red Stars,34,1978,16,16,"1,440",16,2,1,3,0,2,2,0,0,0.12,0.06,0.19,0,0.06,Matches
+,Dinora Garza,mx MEX,"FW,MF",Red Stars,25,1988,2,2,93,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Matches
+,Robyn Gayle,ca CAN,DF,Spirit,27,1985,14,14,"1,185",13.2,0,1,1,0,0,0,2,0,0,0.08,0.08,0,0.08,Matches
+,Missy Geha,us USA,MF,Kansas City,25,1987,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Matches
+,CoCo Goodson,us USA,DF,Sky Blue FC,22,1990,22,22,"2,070",23,1,1,2,1,0,0,1,0,0.04,0.04,0.09,0.04,0.09,Matches
+,Inka Grings,de GER,FW,Red Stars,34,1978,16,14,"1,295",14.4,3,1,4,3,0,2,2,0,0.21,0.07,0.28,0.21,0.28,Matches
+,Ashley Grove,us USA,MF,WNY Flash,22,1990,2,0,,0,0,,,0,0,0,0,0,,,,,,Matches
+,Elizabeth Guess,us USA,"FW,MF",Boston Breakers,28,1985,1,0,15,0.2,0,1,1,0,0,0,0,0,0,6,6,0,6,Matches
+,Elizabeth Guess,us USA,"FW,MF",Thorns,28,1985,4,1,67,0.7,0,0,0,0,0,0,2,0,0,0,0,0,0,Matches
+,Ashlyn Harris,us USA,GK,Spirit,27,1985,18,18,"1,620",18,,,,,0,0,,,,,,,,Matches
+,Tobin Heath,us USA,"FW,MF",Thorns,24,1988,7,7,630,7,0,3,3,0,0,0,4,0,0,0.43,0.43,0,0.43,Matches
+,Taryn Hemmings,us USA,"DF,FW",Red Stars,26,1986,14,14,"1,245",13.8,0,1,1,0,0,0,0,0,0,0.07,0.07,0,0.07,Matches
+,Melissa Henderson,us USA,"FW,MF",Kansas City,23,1989,17,13,"1,030",11.4,0,0,0,0,0,0,0,0,0,0,0,0,0,Matches
+,Bianca Henninger,mx MEX,GK,Kansas City,22,1990,2,2,180,2,,,,,0,0,,,,,,,,Matches
+,Laura Heyboer,us USA,"FW,MF",WNY Flash,23,1989,6,3,,0,1,,,1,0,0,0,0,,,,,,Matches
+,Domenica Hodak,us USA,DF,Spirit,21,1991,11,6,629,7,0,0,0,0,0,0,0,0,0,0,0,0,0,Matches
+,Lauren Holiday,us USA,"FW,MF",Kansas City,25,1987,18,18,"1,620",18,12,9,21,11,1,1,0,0,0.67,0.5,1.17,0.61,1.11,Matches
+,Kate Howarth,us USA,FW,Boston Breakers,21,1991,4,0,26,0.3,0,0,0,0,0,0,0,0,0,0,0,0,0,Matches
+,Jen Hoy,us USA,"FW,MF",Red Stars,22,1991,9,4,471,5.2,3,1,4,3,0,0,1,0,0.57,0.19,0.76,0.57,0.76,Matches
+,Sarah Huffman,us USA,MF,WNY Flash,28,1984,14,11,,0,1,,,1,0,0,1,0,,,,,,Matches
+,Tori Huster,us USA,"DF,MF",Spirit,23,1989,21,21,"1,880",20.9,1,0,1,1,0,0,1,0,0.05,0,0.05,0.05,0.05,Matches
+,Estelle Johnson,cm CMR,DF,WNY Flash,24,1988,22,22,,0,0,,,0,0,0,0,0,,,,,,Matches
+,Kendall Johnson,us USA,"DF,MF",Sky Blue FC,21,1991,22,22,"2,032",22.6,0,2,2,0,0,0,0,0,0,0.09,0.09,0,0.09,Matches
+,Chantel Jones,us USA,GK,Spirit,24,1988,4,4,350,3.9,,,,,0,0,,,,,,,,Matches
+,Courtney Jones,us USA,"DF,FW",Kansas City,22,1990,22,6,670,7.4,4,1,5,4,0,0,0,0,0.54,0.13,0.67,0.54,0.67,Matches
+,Katie Kelly,us USA,DF,Kansas City,25,1987,7,2,207,2.3,0,0,0,0,0,0,0,0,0,0,0,0,0,Matches
+,Angie Kerr,us USA,"FW,MF",Thorns,27,1985,15,9,762,8.5,0,1,1,0,0,0,0,0,0,0.12,0.12,0,0.12,Matches
+,Sam Kerr,au AUS,"FW,MF",WNY Flash,19,1993,19,17,"1,440",16,6,,,6,0,0,1,0,0.37,,,0.37,,Matches
+,Holly King,us USA,MF,Spirit,21,1991,11,6,636,7.1,0,0,0,0,0,0,0,0,0,0,0,0,0,Matches
+,Julie King,us USA,DF,Boston Breakers,23,1989,21,21,"1,862",20.7,0,1,1,0,0,0,0,0,0,0.05,0.05,0,0.05,Matches
+,Brittany Kolmel,us USA,DF,WNY Flash,25,1987,21,21,3,0,4,,,4,0,0,2,0,120,,,120,,Matches
+,Haley Kopmeyer,us USA,GK,Reign,22,1990,1,1,90,1,,,,,0,0,,,,,,,,Matches
+,Ali Krieger,us USA,"DF,MF",Spirit,28,1984,18,16,"1,413",15.7,1,0,1,1,0,0,2,0,0.06,0,0.06,0.06,0.06,Matches
+,Kaylyn Kyle,ca CAN,MF,Reign,24,1988,21,19,"1,754",19.5,3,0,3,0,3,3,4,0,0.15,0,0.15,0,0,Matches
+,Kristina Larsen,us USA,FW,Reign,24,1988,9,4,346,3.8,0,1,1,0,0,0,1,0,0,0.26,0.26,0,0.26,Matches
+,Karina LeBlanc,ca CAN,GK,Thorns,32,1980,21,21,"1,890",21,,,,,0,0,,,,,,,,Matches
+,Adriana Leon,ca CAN,"FW,MF",Boston Breakers,20,1992,6,1,163,1.8,1,0,1,1,0,0,0,0,0.55,0,0.55,0.55,0.55,Matches
+,Adriana Leon,ca CAN,"FW,MF",Red Stars,20,1992,10,9,800,8.9,1,1,2,1,0,0,1,0,0.11,0.11,0.23,0.11,0.23,Matches
+,Sydney Leroux,us USA,"FW,MF",Boston Breakers,22,1990,19,19,"1,694",18.8,11,2,13,11,0,0,1,0,0.58,0.11,0.69,0.58,0.69,Matches
+,Cris Lewis,us USA,GK,Thorns,24,1988,1,1,90,1,,,,,0,0,,,,,,,,Matches
+,Lori Lindsey,us USA,MF,Spirit,32,1980,21,21,"1,870",20.8,1,2,3,1,0,0,0,0,0.05,0.1,0.14,0.05,0.14,Matches
+,Carli Lloyd,us USA,"FW,MF",WNY Flash,30,1982,15,14,8,0.1,0,,,0,0,0,4,0,0,,,0,,Matches
+,Joanna Lohman,us USA,"DF,MF",Boston Breakers,30,1982,22,21,"1,897",21.1,2,0,2,2,0,0,2,0,0.09,0,0.09,0.09,0.09,Matches
+,Michelle Lomnicki,us USA,DF,Red Stars,25,1987,18,17,"1,478",16.4,1,1,2,1,0,0,2,0,0.06,0.06,0.12,0.06,0.12,Matches
+,Allie Long,us USA,"FW,MF",Thorns,25,1987,22,22,"1,956",21.7,3,3,6,3,0,0,2,0,0.14,0.14,0.28,0.14,0.28,Matches
+,Casey Loyd,us USA,"FW,MF",Kansas City,23,1989,4,3,275,3.1,1,1,2,0,1,1,0,0,0.33,0.33,0.65,0,0.33,Matches
+,Jillian Loyden,us USA,GK,Sky Blue FC,27,1985,4,4,360,4,,,,,0,0,,,,,,,,Matches
+,Taylor Lytle,us USA,MF,Sky Blue FC,23,1989,21,12,"1,366",15.2,4,0,4,4,0,0,0,0,0.26,0,0.26,0.26,0.26,Matches
+,Manya Makoski,us USA,MF,Sky Blue FC,28,1984,20,19,"1,803",20,0,0,0,0,0,0,0,0,0,0,0,0,0,Matches
+,Nikki Marshall,us USA,"DF,FW",Thorns,24,1988,22,22,"1,871",20.8,0,1,1,0,0,0,1,0,0,0.05,0.05,0,0.05,Matches
+,Ella Masar,us USA,FW,Red Stars,26,1986,20,14,"1,206",13.4,3,2,5,3,0,0,0,0,0.22,0.15,0.37,0.22,0.37,Matches
+,Diana Matheson,ca CAN,MF,Spirit,28,1984,19,19,"1,699",18.9,8,3,11,4,4,4,0,0,0.42,0.16,0.58,0.21,0.37,Matches
+,Merritt Mathias,us USA,"DF,MF",Kansas City,22,1990,22,19,"1,738",19.3,2,3,5,2,0,0,3,0,0.1,0.16,0.26,0.1,0.26,Matches
+,Alyssa Mautz,us USA,"FW,MF",Red Stars,23,1989,18,8,901,10,4,0,4,4,0,0,3,0,0.4,0,0.4,0.4,0.4,Matches
+,Bryanna McCarthy,ca CAN,DF,WNY Flash,21,1991,1,0,,0,0,,,0,0,0,0,0,,,,,,Matches
+,Tiffany McCarty,us USA,FW,Spirit,22,1990,21,12,"1,242",13.8,2,0,2,2,0,0,0,0,0.14,0,0.14,0.14,0.14,Matches
+,Jessica McDonald,us USA,FW,Reign,24,1988,7,6,434,4.8,3,1,4,3,0,0,0,0,0.62,0.21,0.83,0.62,0.83,Matches
+,Jessica McDonald,us USA,FW,Red Stars,24,1988,9,3,323,3.6,0,1,1,0,0,0,0,0,0,0.28,0.28,0,0.28,Matches
+,Erin McLeod,ca CAN,GK,Red Stars,29,1983,16,16,"1,440",16,,,,,0,0,,,,,,,,Matches
+,Kia McNeill,us USA,DF,Boston Breakers,26,1986,21,21,"1,890",21,0,0,0,0,0,0,2,0,0,0,0,0,0,Matches
+,Kristen Meier,us USA,"DF,MF",Reign,21,1991,6,4,364,4,0,0,0,0,0,0,0,0,0,0,0,0,0,Matches
+,Melinda Mercado,us USA,DF,Boston Breakers,22,1990,1,1,90,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Matches
+,Kristie Mewis,us USA,"DF,MF",Kansas City,21,1991,20,20,"1,784",19.8,1,0,1,1,0,0,2,0,0.05,0,0.05,0.05,0.05,Matches
+,Caroline Miller,us USA,FW,Spirit,21,1991,7,1,199,2.2,0,0,0,0,0,0,0,0,0,0,0,0,0,Matches
+,Alex Morgan,us USA,FW,Thorns,23,1989,18,18,"1,525",16.9,8,5,13,7,1,1,4,0,0.47,0.3,0.77,0.41,0.71,Matches
+,Carmelina Moscato,ca CAN,DF,Boston Breakers,28,1984,5,1,76,0.8,0,0,0,0,0,0,0,0,0,0,0,0,0,Matches
+,Carmelina Moscato,ca CAN,DF,Red Stars,28,1984,5,4,363,4,0,0,0,0,0,0,1,0,0,0,0,0,0,Matches
+,Alyssa Naeher,us USA,GK,Boston Breakers,24,1988,9,8,765,8.5,,,,,0,0,,,,,,,,Matches
+,Christine Nairn,us USA,MF,Reign,22,1990,22,22,"1,922",21.4,3,5,8,3,0,1,2,0,0.14,0.23,0.37,0.14,0.37,Matches
+,Ashley Nick,us USA,MF,Sky Blue FC,25,1987,3,2,315,3.5,0,0,0,0,0,0,0,0,0,0,0,0,0,Matches
+,Natalie Norris,us USA,DF,Kansas City,22,1990,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Matches
+,Teresa Noyola,mx MEX,"FW,MF",Reign,22,1990,11,8,759,8.4,1,1,2,1,0,0,0,0,0.12,0.12,0.24,0.12,0.24,Matches
+,Teresa Noyola,mx MEX,"FW,MF",Kansas City,22,1990,7,1,155,1.7,0,0,0,0,0,0,0,0,0,0,0,0,0,Matches
+,Kelley O'Hara,us USA,"DF,FW",Sky Blue FC,24,1988,12,10,922,10.2,0,3,3,0,0,0,2,0,0,0.29,0.29,0,0.29,Matches
+,Emilee O'Neil,us USA,"DF,MF",Thorns,29,1983,4,1,141,1.6,0,0,0,0,0,0,0,0,0,0,0,0,0,Matches
+,Heather O'Reilly,us USA,"FW,MF",Boston Breakers,28,1985,20,20,"1,734",19.3,5,6,11,4,1,1,1,0,0.26,0.31,0.57,0.21,0.52,Matches
+,Mónica Ocampo,mx MEX,FW,Sky Blue FC,26,1987,16,9,965,10.7,8,2,10,8,0,0,0,0,0.75,0.19,0.93,0.75,0.93,Matches
+,Stephanie Ochs,us USA,FW,Spirit,22,1990,22,21,"1,840",20.4,1,2,3,1,0,0,0,0,0.05,0.1,0.15,0.05,0.15,Matches
+,Leslie Osborne,us USA,MF,Red Stars,29,1983,18,18,"1,550",17.2,1,0,1,1,0,0,2,0,0.06,0,0.06,0.06,0.06,Matches
+,Lyndsey Patterson,us USA,"FW,MF",Reign,30,1982,3,0,39,0.4,0,0,0,0,0,0,0,0,0,0,0,0,0,Matches
+,Christie Pearce,us USA,DF,Sky Blue FC,37,1975,20,20,"1,890",21,0,0,0,0,0,0,0,0,0,0,0,0,0,Matches
+,Verónica Pérez,mx MEX,"DF,MF",WNY Flash,24,1988,22,11,1,0,1,,,1,0,0,0,0,90,,,90,,Matches
+,Ashley Phillips,us USA,GK,Boston Breakers,26,1986,11,11,945,10.5,,,,,0,0,,,,,,,,Matches
+,Conny Pohlers,de GER,FW,Spirit,34,1978,13,12,963,10.7,1,0,1,1,0,0,2,0,0.09,0,0.09,0.09,0.09,Matches
+,Toni Pressley,us USA,DF,Spirit,22,1990,8,8,720,8,0,0,0,0,0,0,1,0,0,0,0,0,0,Matches
+,Rachel Quon,ca CAN,DF,Red Stars,21,1991,19,16,"1,531",17,0,1,1,0,0,0,1,0,0,0.06,0.06,0,0.06,Matches
+,Casey Ramirez,us USA,DF,Thorns,23,1989,4,1,159,1.8,0,0,0,0,0,0,0,0,0,0,0,0,0,Matches
+,Nayeli Rangel,mx MEX,MF,Sky Blue FC,20,1992,10,5,479,5.3,0,0,0,0,0,0,0,0,0,0,0,0,0,Matches
+,Megan Rapinoe,us USA,"FW,MF",Reign,27,1985,12,11,"1,023",11.4,5,1,6,5,0,0,1,0,0.44,0.09,0.53,0.44,0.53,Matches
+,Elli Reed,us USA,"DF,MF",Reign,23,1989,17,17,"1,501",16.7,0,2,2,0,0,0,2,0,0,0.12,0.12,0,0.12,Matches
+,Katherine Reynolds,us USA,DF,WNY Flash,25,1987,22,22,,0,2,,,2,0,0,2,0,,,,,,Matches
+,Julia Roberts,us USA,MF,Spirit,21,1991,20,19,"1,613",17.9,0,0,0,0,0,0,1,0,0,0,0,0,0,Matches
+,Jodi-Ann Robinson,ca CAN,"FW,MF",WNY Flash,23,1989,13,0,1,0,0,,,0,0,0,1,0,0,,,0,,Matches
+,Jenny Ruiz-Williams,mx MEX,"DF,MF",Reign,29,1983,7,4,388,4.3,0,0,0,0,0,0,1,2,0,0,0,0,0,Matches
+,Alex Sahlen,us USA,DF,WNY Flash,30,1982,18,18,,0,3,,,3,0,0,0,0,,,,,,Matches
+,Angela Salem,us USA,"FW,MF",WNY Flash,24,1988,21,20,,0,0,,,0,0,0,1,0,,,,,,Matches
+,Lianne Sanderson,eng ENG,FW,Boston Breakers,24,1988,22,21,"1,913",21.3,5,7,12,5,0,1,0,0,0.24,0.33,0.56,0.24,0.56,Matches
+,Jackie Santacaterina,us USA,DF,Red Stars,25,1987,18,14,"1,316",14.6,3,1,4,3,0,0,1,0,0.21,0.07,0.27,0.21,0.27,Matches
+,Cecilia Santiago,mx MEX,GK,Boston Breakers,18,1994,3,3,270,3,,,,,0,0,,,,,,,,Matches
+,Becky Sauerbrunn,us USA,DF,Kansas City,27,1985,19,19,"1,710",19,0,1,1,0,0,0,0,0,0,0.05,0.05,0,0.05,Matches
+,Sophie Schmidt,ca CAN,MF,Sky Blue FC,24,1988,19,18,"1,622",18,7,1,8,6,1,1,0,1,0.39,0.06,0.44,0.33,0.39,Matches
+,Katie Schoepfer,us USA,FW,Boston Breakers,24,1988,20,14,"1,080",12,2,1,3,2,0,0,0,0,0.17,0.08,0.25,0.17,0.25,Matches
+,Desiree Scott,ca CAN,MF,Kansas City,25,1987,20,20,"1,800",20,0,0,0,0,0,0,0,0,0,0,0,0,0,Matches
+,Lauren Sesselmann,ca CAN,"DF,FW",Kansas City,29,1983,19,19,"1,633",18.1,0,0,0,0,0,0,3,1,0,0,0,0,0,Matches
+,Meleana Shim,us USA,MF,Thorns,21,1991,19,17,"1,416",15.7,5,2,7,5,0,0,1,0,0.32,0.13,0.44,0.32,0.44,Matches
+,Jessica Shufelt,us USA,FW,Thorns,22,1990,4,0,31,0.3,0,0,0,0,0,0,0,0,0,0,0,0,0,Matches
+,Kyah Simon,au AUS,"FW,MF",Boston Breakers,21,1991,17,11,"1,068",11.9,3,3,6,3,0,0,0,0,0.25,0.25,0.51,0.25,0.51,Matches
+,Christine Sinclair,ca CAN,"FW,MF",Thorns,29,1983,20,20,"1,783",19.8,8,2,10,6,2,2,2,0,0.4,0.1,0.5,0.3,0.4,Matches
+,Julianne Sitch,us USA,"DF,MF",Red Stars,29,1983,20,18,"1,577",17.5,1,4,5,1,0,0,1,0,0.06,0.23,0.29,0.06,0.29,Matches
+,Hope Solo,us USA,GK,Reign,31,1981,14,14,"1,260",14,,,,,0,0,,,,,,,,Matches
+,Jasmyne Spencer,us USA,"DF,FW",Spirit,22,1990,17,6,697,7.7,0,1,1,0,0,0,0,0,0,0.13,0.13,0,0.13,Matches
+,Pamela Tajonar,mx MEX,GK,WNY Flash,28,1984,1,0,2,0,,,,,0,0,,,,,,,,Matches
+,Lindsay Taylor,us USA,FW,Reign,23,1989,6,4,341,3.8,1,0,1,1,0,0,0,0,0.26,0,0.26,0.26,0.26,Matches
+,Lindsay Taylor,us USA,FW,Spirit,23,1989,6,2,239,2.7,0,0,0,0,0,0,0,0,0,0,0,0,0,Matches
+,Maddie Thompson,us USA,DF,Sky Blue FC,22,1990,14,4,414,4.6,0,0,0,0,0,0,0,0,0,0,0,0,0,Matches
+,Kika Toulouse,us USA,DF,Spirit,23,1989,16,9,894,9.9,0,0,0,0,0,0,0,0,0,0,0,0,0,Matches
+,Erika Tymrak,us USA,"FW,MF",Kansas City,21,1991,21,16,"1,453",16.1,6,4,10,6,0,0,0,0,0.37,0.25,0.62,0.37,0.62,Matches
+,Rachel Van Hollebeke,us USA,DF,Thorns,27,1985,20,20,"1,800",20,0,2,2,0,0,0,2,0,0,0.1,0.1,0,0.1,Matches
+,Taylor Vancil,us USA,GK,Red Stars,21,1991,6,6,540,6,,,,,0,0,,,,,,,,Matches
+,Lydia Vandenbergh,au AUS,"DF,MF",Red Stars,29,1984,17,13,"1,195",13.3,0,2,2,0,0,0,1,0,0,0.15,0.15,0,0.15,Matches
+,Abby Wambach,us USA,FW,WNY Flash,32,1980,19,19,"1,693",18.8,11,8,19,9,2,4,2,0,0.58,0.43,1.01,0.48,0.9,Matches
+,Nikki Washington,us USA,"FW,MF",Thorns,24,1988,11,10,776,8.6,1,2,3,1,0,0,3,0,0.12,0.23,0.35,0.12,0.35,Matches
+,Tiffany Weimer,us USA,FW,Thorns,29,1983,10,5,522,5.8,1,1,2,1,0,0,0,0,0.17,0.17,0.34,0.17,0.34,Matches
+,Ingrid Wells,us USA,MF,WNY Flash,23,1989,10,0,,0,0,,,0,0,0,0,0,,,,,,Matches
+,Ingrid Wells,us USA,MF,Spirit,23,1989,8,8,542,6,0,0,0,0,0,0,1,0,0,0,0,0,0,Matches
+,Courtney Wetzel,us USA,"DF,MF",Thorns,23,1989,16,6,602,6.7,1,1,2,1,0,0,0,0,0.15,0.15,0.3,0.15,0.3,Matches
+,Cat Whitehill,us USA,DF,Boston Breakers,30,1982,22,22,"1,978",22,1,2,3,1,0,0,1,0,0.05,0.09,0.14,0.05,0.14,Matches
+,Rhian Wilkinson,ca CAN,"DF,FW",Boston Breakers,30,1982,14,11,913,10.1,2,1,3,2,0,0,1,0,0.2,0.1,0.3,0.2,0.3,Matches
+,Colleen Williams,us USA,"FW,MF",Spirit,21,1991,6,2,129,1.4,0,0,0,0,0,0,0,0,0,0,0,0,0,Matches
+,Nia Williams,us USA,DF,Kansas City,22,1990,4,2,182,2,0,0,0,0,0,0,1,0,0,0,0,0,0,Matches
+,Kat Williamson,us USA,DF,Thorns,23,1989,22,22,"1,944",21.6,0,0,0,0,0,0,1,0,0,0,0,0,0,Matches
+,Keelin Winters,us USA,MF,Reign,24,1988,21,19,"1,709",19,1,1,2,1,0,0,1,0,0.05,0.05,0.11,0.05,0.11,Matches
+,Lisa-Marie Woods,no NOR,MF,Boston Breakers,28,1984,4,1,68,0.8,0,0,0,0,0,0,0,0,0,0,0,0,0,Matches
+,Lupita Worbis,mx MEX,"FW,MF",Spirit,29,1983,11,5,403,4.5,1,1,2,1,0,0,0,0,0.22,0.22,0.45,0.22,0.45,Matches
+,Kimberly Yokers,us USA,MF,WNY Flash,30,1982,3,2,,0,0,,,0,0,0,0,0,,,,,,Matches
+,McCall Zerboni,us USA,MF,WNY Flash,26,1986,20,20,"1,706",19,0,,,0,0,0,1,0,0,,,0,,Matches
+,Emily Zurrer,ca CAN,DF,Reign,25,1987,7,6,583,6.5,0,0,0,0,0,0,1,0,0,0,0,0,0,Matches

@@ -1,0 +1,104 @@
+﻿match type,Day,Date,Time,Home,Score,Away,Attendance,Venue,Referee,Match Report,Match URL,Match ID
+Regular Season,Sat,4/16/16,19:00,Spirit,1–0,Boston Breakers,,Maureen Hendricks Field at Maryland Socc...,Margaret Domka,Match Report,https://fbref.com/en/matches/0b641a7e/Washington-Spirit-Boston-Breakers-April-16-2016-NWSL,0b641a7e
+Regular Season,Sun,4/17/16,16:00 (19:00),Reign,1–2,Sky Blue FC,3987,,,Match Report,https://fbref.com/en/matches/2a7d2195/Seattle-Reign-FC-Sky-Blue-FC-April-17-2016-NWSL,2a7d2195
+Regular Season,Sat,4/16/16,19:30 (20:30),Kansas City,0–1,WNY Flash,8022,Children's Mercy Park,,Match Report,https://fbref.com/en/matches/ff1e7c30/FC-Kansas-City-Western-New-York-Flash-April-16-2016-NWSL,ff1e7c30
+Regular Season,Sat,4/16/16,19:30 (20:30),Dash,3–1,Red Stars,7740,BBVA Compass Stadium,,Match Report,https://fbref.com/en/matches/a0486da6/Houston-Dash-Chicago-Red-Stars-April-16-2016-NWSL,a0486da6
+Regular Season,Sun,4/17/16,19:00 (22:00),Thorns,2–1,Pride,16073,Providence Park,,Match Report,https://fbref.com/en/matches/75c25fca/Portland-Thorns-FC-Orlando-Pride-April-17-2016-NWSL,75c25fca
+Regular Season,Sat,4/23/16,18:00 (19:00),Red Stars,1–0,WNY Flash,2529,Toyota Park,,Match Report,https://fbref.com/en/matches/f0424777/Chicago-Red-Stars-Western-New-York-Flash-April-23-2016-NWSL,f0424777
+Regular Season,Sat,4/23/16,19:30,Pride,3–1,Dash,23403,Orlando Citrus Bowl,,Match Report,https://fbref.com/en/matches/c5c5aa55/Orlando-Pride-Houston-Dash-April-23-2016-NWSL,c5c5aa55
+Regular Season,Sun,4/24/16,18:00,Sky Blue FC,1–2,Spirit,2571,,,Match Report,https://fbref.com/en/matches/ce38ef6c/Sky-Blue-FC-Washington-Spirit-April-24-2016-NWSL,ce38ef6c
+Regular Season,Sun,4/24/16,18:30,Boston Breakers,0–3,Reign,3743,,,Match Report,https://fbref.com/en/matches/b514a2bf/Boston-Breakers-Seattle-Reign-FC-April-24-2016-NWSL,b514a2bf
+Regular Season,Sat,4/23/16,19:30 (20:30),Kansas City,1–1,Thorns,3022,,,Match Report,https://fbref.com/en/matches/ca5bb662/FC-Kansas-City-Portland-Thorns-FC-April-23-2016-NWSL,ca5bb662
+Regular Season,Fri,4/29/16,19:00,WNY Flash,0–3,Spirit,3615,,,Match Report,https://fbref.com/en/matches/d85bd112/Western-New-York-Flash-Washington-Spirit-April-29-2016-NWSL,d85bd112
+Regular Season,Fri,4/29/16,19:30 (20:30),Dash,0–0,Sky Blue FC,5081,BBVA Compass Stadium,,Match Report,https://fbref.com/en/matches/9a7cca70/Houston-Dash-Sky-Blue-FC-April-29-2016-NWSL,9a7cca70
+Regular Season,Sun,5/1/16,16:00 (19:00),Reign,1–0,Kansas City,4083,,,Match Report,https://fbref.com/en/matches/7eba51ec/Seattle-Reign-FC-FC-Kansas-City-May-1-2016-NWSL,7eba51ec
+Regular Season,Sun,5/1/16,17:00,Boston Breakers,0–1,Thorns,3698,,,Match Report,https://fbref.com/en/matches/a69cbaec/Boston-Breakers-Portland-Thorns-FC-May-1-2016-NWSL,a69cbaec
+Regular Season,Sun,5/1/16,17:00 (18:00),Red Stars,1–0,Pride,4024,Toyota Park,,Match Report,https://fbref.com/en/matches/62f30bfe/Chicago-Red-Stars-Orlando-Pride-May-1-2016-NWSL,62f30bfe
+Regular Season,Sat,5/7/16,19:00,Spirit,0–0,Thorns,4333,Maureen Hendricks Field at Maryland Socc...,,Match Report,https://fbref.com/en/matches/9a5a8ae2/Washington-Spirit-Portland-Thorns-FC-May-7-2016-NWSL,9a5a8ae2
+Regular Season,Sat,5/7/16,19:00,Boston Breakers,0–1,Red Stars,3622,,,Match Report,https://fbref.com/en/matches/e65c3820/Boston-Breakers-Chicago-Red-Stars-May-7-2016-NWSL,e65c3820
+Regular Season,Sat,5/7/16,19:00,Sky Blue FC,1–2,WNY Flash,1252,,,Match Report,https://fbref.com/en/matches/c6558d7d/Sky-Blue-FC-Western-New-York-Flash-May-7-2016-NWSL,c6558d7d
+Regular Season,Sun,5/8/16,17:00,Pride,2–0,Reign,8211,Camping World Stadium,,Match Report,https://fbref.com/en/matches/307958ca/Orlando-Pride-Seattle-Reign-FC-May-8-2016-NWSL,307958ca
+Regular Season,Sat,5/7/16,19:30 (20:30),Kansas City,1–2,Dash,3282,,,Match Report,https://fbref.com/en/matches/61cf8332/FC-Kansas-City-Houston-Dash-May-7-2016-NWSL,61cf8332
+Regular Season,Fri,5/13/16,19:00,Sky Blue FC,1–0,Boston Breakers,1275,,,Match Report,https://fbref.com/en/matches/b9586581/Sky-Blue-FC-Boston-Breakers-May-13-2016-NWSL,b9586581
+Regular Season,Sat,5/14/16,19:00,Spirit,1–0,Dash,3545,Maureen Hendricks Field at Maryland Socc...,,Match Report,https://fbref.com/en/matches/157a3d0a/Washington-Spirit-Houston-Dash-May-14-2016-NWSL,157a3d0a
+Regular Season,Fri,5/13/16,19:30 (20:30),Kansas City,0–0,Red Stars,2217,,,Match Report,https://fbref.com/en/matches/639b391a/FC-Kansas-City-Chicago-Red-Stars-May-13-2016-NWSL,639b391a
+Regular Season,Sat,5/14/16,19:30,Pride,1–0,WNY Flash,7841,Camping World Stadium,,Match Report,https://fbref.com/en/matches/c37fb478/Orlando-Pride-Western-New-York-Flash-May-14-2016-NWSL,c37fb478
+Regular Season,Sat,5/14/16,19:00 (22:00),Reign,1–1,Thorns,4631,,,Match Report,https://fbref.com/en/matches/8bfa7c91/Seattle-Reign-FC-Portland-Thorns-FC-May-14-2016-NWSL,8bfa7c91
+Regular Season,Sat,5/21/16,19:00,WNY Flash,5–2,Sky Blue FC,3910,,,Match Report,https://fbref.com/en/matches/6b1b6bac/Western-New-York-Flash-Sky-Blue-FC-May-21-2016-NWSL,6b1b6bac
+Regular Season,Fri,5/20/16,19:30 (20:30),Dash,0–1,Pride,6293,BBVA Compass Stadium,,Match Report,https://fbref.com/en/matches/fd557bfc/Houston-Dash-Orlando-Pride-May-20-2016-NWSL,fd557bfc
+Regular Season,Sun,5/22/16,16:00 (19:00),Reign,1–2,Red Stars,4056,,,Match Report,https://fbref.com/en/matches/ed540940/Seattle-Reign-FC-Chicago-Red-Stars-May-22-2016-NWSL,ed540940
+Regular Season,Sun,5/22/16,18:30,Boston Breakers,1–0,Kansas City,3288,,,Match Report,https://fbref.com/en/matches/8c1b8361/Boston-Breakers-FC-Kansas-City-May-22-2016-NWSL,8c1b8361
+Regular Season,Sat,5/21/16,19:00 (22:00),Thorns,4–1,Spirit,15823,Providence Park,,Match Report,https://fbref.com/en/matches/9624a028/Portland-Thorns-FC-Washington-Spirit-May-21-2016-NWSL,9624a028
+Regular Season,Fri,5/27/16,19:00,WNY Flash,4–0,Boston Breakers,3940,,,Match Report,https://fbref.com/en/matches/69a170d6/Western-New-York-Flash-Boston-Breakers-May-27-2016-NWSL,69a170d6
+Regular Season,Sun,5/29/16,16:00 (19:00),Thorns,0–0,Reign,18114,Providence Park,,Match Report,https://fbref.com/en/matches/8ea627dd/Portland-Thorns-FC-Seattle-Reign-FC-May-29-2016-NWSL,8ea627dd
+Regular Season,Sun,5/29/16,18:00 (19:00),Red Stars,1–1,Sky Blue FC,2502,Toyota Park,,Match Report,https://fbref.com/en/matches/28529962/Chicago-Red-Stars-Sky-Blue-FC-May-29-2016-NWSL,28529962
+Regular Season,Sat,5/28/16,19:30 (20:30),Kansas City,2–0,Pride,3104,,,Match Report,https://fbref.com/en/matches/fff21e32/FC-Kansas-City-Orlando-Pride-May-28-2016-NWSL,fff21e32
+Regular Season,Fri,6/10/16,19:00,Boston Breakers,1–1,Spirit,4007,,,Match Report,https://fbref.com/en/matches/f057de15/Boston-Breakers-Washington-Spirit-June-10-2016-NWSL,f057de15
+Regular Season,Sat,6/11/16,19:00,Sky Blue FC,1–1,Kansas City,2754,,,Match Report,https://fbref.com/en/matches/70a27066/Sky-Blue-FC-FC-Kansas-City-June-11-2016-NWSL,70a27066
+Regular Season,Sat,6/11/16,19:00,WNY Flash,1–0,Pride,4526,,,Match Report,https://fbref.com/en/matches/2772caad/Western-New-York-Flash-Orlando-Pride-June-11-2016-NWSL,2772caad
+Regular Season,Sun,6/12/16,16:00 (19:00),Reign,1–0,Dash,4682,,,Match Report,https://fbref.com/en/matches/73284fcd/Seattle-Reign-FC-Houston-Dash-June-12-2016-NWSL,73284fcd
+Regular Season,Sun,6/12/16,17:00 (18:00),Red Stars,1–1,Thorns,3131,Toyota Park,,Match Report,https://fbref.com/en/matches/5ca528de/Chicago-Red-Stars-Portland-Thorns-FC-June-12-2016-NWSL,5ca528de
+Regular Season,Fri,6/17/16,19:00,WNY Flash,0–2,Thorns,2235,,,Match Report,https://fbref.com/en/matches/c44e652b/Western-New-York-Flash-Portland-Thorns-FC-June-17-2016-NWSL,c44e652b
+Regular Season,Sat,6/18/16,19:00,Spirit,2–0,Pride,5750,Maureen Hendricks Field at Maryland Socc...,,Match Report,https://fbref.com/en/matches/c517070e/Washington-Spirit-Orlando-Pride-June-18-2016-NWSL,c517070e
+Regular Season,Sun,6/19/16,18:00,Sky Blue FC,0–0,Reign,1542,,,Match Report,https://fbref.com/en/matches/42046b2c/Sky-Blue-FC-Seattle-Reign-FC-June-19-2016-NWSL,42046b2c
+Regular Season,Sat,6/18/16,19:00 (20:00),Red Stars,3–0,Boston Breakers,2553,Toyota Park,,Match Report,https://fbref.com/en/matches/7bd0ae51/Chicago-Red-Stars-Boston-Breakers-June-18-2016-NWSL,7bd0ae51
+Regular Season,Sun,6/19/16,19:30 (20:30),Dash,0–1,Kansas City,4570,BBVA Compass Stadium,,Match Report,https://fbref.com/en/matches/c1e29519/Houston-Dash-FC-Kansas-City-June-19-2016-NWSL,c1e29519
+Regular Season,Wed,6/22/16,19:00 (22:00),Thorns,2–0,Red Stars,16931,Providence Park,,Match Report,https://fbref.com/en/matches/0d797bd7/Portland-Thorns-FC-Chicago-Red-Stars-June-22-2016-NWSL,0d797bd7
+Regular Season,Thu,6/23/16,19:30,Pride,1–0,Dash,6870,Camping World Stadium,,Match Report,https://fbref.com/en/matches/47692ff2/Orlando-Pride-Houston-Dash-June-23-2016-NWSL,47692ff2
+Regular Season,Fri,6/24/16,19:00,WNY Flash,7–1,Boston Breakers,3024,,,Match Report,https://fbref.com/en/matches/9e8bd26c/Western-New-York-Flash-Boston-Breakers-June-24-2016-NWSL,9e8bd26c
+Regular Season,Sat,6/25/16,18:00 (19:00),Kansas City,0–0,Reign,3041,,,Match Report,https://fbref.com/en/matches/137c4c4f/FC-Kansas-City-Seattle-Reign-FC-June-25-2016-NWSL,137c4c4f
+Regular Season,Sat,6/25/16,19:00,Spirit,1–2,Sky Blue FC,3448,Maureen Hendricks Field at Maryland Socc...,,Match Report,https://fbref.com/en/matches/b9d71721/Washington-Spirit-Sky-Blue-FC-June-25-2016-NWSL,b9d71721
+Regular Season,Sun,6/26/16,17:00,Pride,1–2,Thorns,7143,Camping World Stadium,,Match Report,https://fbref.com/en/matches/1f91c7ec/Orlando-Pride-Portland-Thorns-FC-June-26-2016-NWSL,1f91c7ec
+Regular Season,Fri,7/1/16,19:00,WNY Flash,2–0,Red Stars,3114,,,Match Report,https://fbref.com/en/matches/b0ba7035/Western-New-York-Flash-Chicago-Red-Stars-July-1-2016-NWSL,b0ba7035
+Regular Season,Sat,7/2/16,19:00,Spirit,2–0,Kansas City,3036,Maureen Hendricks Field at Maryland Socc...,,Match Report,https://fbref.com/en/matches/9524abcc/Washington-Spirit-FC-Kansas-City-July-2-2016-NWSL,9524abcc
+Regular Season,Sat,7/2/16,19:00 (22:00),Reign,2–0,Boston Breakers,4356,,,Match Report,https://fbref.com/en/matches/f193137b/Seattle-Reign-FC-Boston-Breakers-July-2-2016-NWSL,f193137b
+Regular Season,Sat,7/2/16,19:30 (22:30),Thorns,2–1,Sky Blue FC,14287,Providence Park,,Match Report,https://fbref.com/en/matches/bfcbef4e/Portland-Thorns-FC-Sky-Blue-FC-July-2-2016-NWSL,bfcbef4e
+Regular Season,Sat,7/9/16,19:00,WNY Flash,3–2,Reign,4314,,,Match Report,https://fbref.com/en/matches/13937440/Western-New-York-Flash-Seattle-Reign-FC-July-9-2016-NWSL,13937440
+Regular Season,Sat,7/9/16,19:00,Spirit,2–0,Red Stars,3631,Maureen Hendricks Field at Maryland Socc...,,Match Report,https://fbref.com/en/matches/0c4b6be9/Washington-Spirit-Chicago-Red-Stars-July-9-2016-NWSL,0c4b6be9
+Regular Season,Sat,7/9/16,19:00,Sky Blue FC,1–0,Dash,1732,,,Match Report,https://fbref.com/en/matches/e855070e/Sky-Blue-FC-Houston-Dash-July-9-2016-NWSL,e855070e
+Regular Season,Sun,7/10/16,17:50,Pride,2–1,Boston Breakers,5842,Camping World Stadium,,Match Report,https://fbref.com/en/matches/ab55873f/Orlando-Pride-Boston-Breakers-July-10-2016-NWSL,ab55873f
+Regular Season,Sat,7/9/16,19:30 (22:30),Thorns,1–2,Kansas City,16942,Providence Park,,Match Report,https://fbref.com/en/matches/b87f47b5/Portland-Thorns-FC-FC-Kansas-City-July-9-2016-NWSL,b87f47b5
+Regular Season,Sat,7/16/16,18:00 (19:00),Kansas City,2–3,Spirit,2013,,,Match Report,https://fbref.com/en/matches/ee29032d/FC-Kansas-City-Washington-Spirit-July-16-2016-NWSL,ee29032d
+Regular Season,Sat,7/16/16,19:30,Pride,0–1,Red Stars,7247,Camping World Stadium,,Match Report,https://fbref.com/en/matches/08f3e4ef/Orlando-Pride-Chicago-Red-Stars-July-16-2016-NWSL,08f3e4ef
+Regular Season,Sun,7/17/16,17:00,Boston Breakers,2–3,Sky Blue FC,3314,,,Match Report,https://fbref.com/en/matches/cf65e0d0/Boston-Breakers-Sky-Blue-FC-July-17-2016-NWSL,cf65e0d0
+Regular Season,Sat,7/16/16,19:00 (22:00),Reign,1–1,WNY Flash,4521,,,Match Report,https://fbref.com/en/matches/d7011988/Seattle-Reign-FC-Western-New-York-Flash-July-16-2016-NWSL,d7011988
+Regular Season,Sat,7/16/16,19:30 (20:30),Dash,3–0,Thorns,5661,BBVA Compass Stadium,,Match Report,https://fbref.com/en/matches/e8ae45f5/Houston-Dash-Portland-Thorns-FC-July-16-2016-NWSL,e8ae45f5
+Regular Season,Sat,7/23/16,19:00,WNY Flash,0–1,Kansas City,3556,,,Match Report,https://fbref.com/en/matches/b9ba15e0/Western-New-York-Flash-FC-Kansas-City-July-23-2016-NWSL,b9ba15e0
+Regular Season,Sat,7/23/16,19:00,Sky Blue FC,1–0,Spirit,1552,,,Match Report,https://fbref.com/en/matches/009972a5/Sky-Blue-FC-Washington-Spirit-July-23-2016-NWSL,009972a5
+Regular Season,Sat,7/23/16,19:00 (20:00),Red Stars,1–1,Dash,3621,Toyota Park,,Match Report,https://fbref.com/en/matches/e6f08fcf/Chicago-Red-Stars-Houston-Dash-July-23-2016-NWSL,e6f08fcf
+Regular Season,Sat,7/23/16,19:00 (22:00),Reign,5–2,Pride,5103,,,Match Report,https://fbref.com/en/matches/d600cea9/Seattle-Reign-FC-Orlando-Pride-July-23-2016-NWSL,d600cea9
+Regular Season,Sun,7/31/16,11:00,Spirit,3–1,Sky Blue FC,2930,Maureen Hendricks Field at Maryland Socc...,,Match Report,https://fbref.com/en/matches/e308d8d8/Washington-Spirit-Sky-Blue-FC-July-31-2016-NWSL,e308d8d8
+Regular Season,Sun,7/31/16,18:00,Boston Breakers,1–0,Pride,4379,,,Match Report,https://fbref.com/en/matches/4c7ee1cb/Boston-Breakers-Orlando-Pride-July-31-2016-NWSL,4c7ee1cb
+Regular Season,Sat,7/30/16,19:00 (20:00),Red Stars,1–0,Kansas City,2550,Toyota Park,,Match Report,https://fbref.com/en/matches/bd79845f/Chicago-Red-Stars-FC-Kansas-City-July-30-2016-NWSL,bd79845f
+Regular Season,Sat,7/30/16,19:30 (22:30),Thorns,1–0,Reign,19231,Providence Park,,Match Report,https://fbref.com/en/matches/a45bfe72/Portland-Thorns-FC-Seattle-Reign-FC-July-30-2016-NWSL,a45bfe72
+Regular Season,Sat,7/30/16,19:30 (20:30),Dash,3–3,WNY Flash,4329,BBVA Compass Stadium,,Match Report,https://fbref.com/en/matches/d6fc1bfa/Houston-Dash-Western-New-York-Flash-July-30-2016-NWSL,d6fc1bfa
+Regular Season,Thu,8/18/16,19:00 (20:00),Dash,1–2,Spirit,5012,BBVA Compass Stadium,,Match Report,https://fbref.com/en/matches/cd411b68/Houston-Dash-Washington-Spirit-August-18-2016-NWSL,cd411b68
+Regular Season,Fri,8/26/16,19:30,Pride,1–2,Spirit,7052,Camping World Stadium,,Match Report,https://fbref.com/en/matches/aea0372f/Orlando-Pride-Washington-Spirit-August-26-2016-NWSL,aea0372f
+Regular Season,Sat,8/27/16,14:00 (17:00),Reign,3–1,Thorns,5888,,,Match Report,https://fbref.com/en/matches/1e93d054/Seattle-Reign-FC-Portland-Thorns-FC-August-27-2016-NWSL,1e93d054
+Regular Season,Sat,8/27/16,19:00,Sky Blue FC,1–3,Red Stars,3108,,,Match Report,https://fbref.com/en/matches/ca38eecc/Sky-Blue-FC-Chicago-Red-Stars-August-27-2016-NWSL,ca38eecc
+Regular Season,Sat,8/27/16,19:00,WNY Flash,2–2,Dash,6449,,,Match Report,https://fbref.com/en/matches/e1c34c58/Western-New-York-Flash-Houston-Dash-August-27-2016-NWSL,e1c34c58
+Regular Season,Sun,8/28/16,17:00 (18:00),Kansas City,0–2,Boston Breakers,2206,,,Match Report,https://fbref.com/en/matches/af7f07e2/FC-Kansas-City-Boston-Breakers-August-28-2016-NWSL,af7f07e2
+Regular Season,Wed,8/31/16,20:00,Boston Breakers,1–3,Dash,3762,,,Match Report,https://fbref.com/en/matches/eb621ced/Boston-Breakers-Houston-Dash-August-31-2016-NWSL,eb621ced
+Regular Season,Sat,9/3/16,19:00,Spirit,1–1,WNY Flash,4527,Maureen Hendricks Field at Maryland Socc...,,Match Report,https://fbref.com/en/matches/f142caa9/Washington-Spirit-Western-New-York-Flash-September-3-2016-NWSL,f142caa9
+Regular Season,Sun,9/4/16,16:00 (19:00),Thorns,5–1,Boston Breakers,17152,Providence Park,,Match Report,https://fbref.com/en/matches/4f202729/Portland-Thorns-FC-Boston-Breakers-September-4-2016-NWSL,4f202729
+Regular Season,Sun,9/4/16,17:00 (18:00),Kansas City,2–1,Sky Blue FC,2414,,,Match Report,https://fbref.com/en/matches/804f2981/FC-Kansas-City-Sky-Blue-FC-September-4-2016-NWSL,804f2981
+Regular Season,Sun,9/4/16,18:00 (19:00),Red Stars,2–2,Reign,3355,Toyota Park,,Match Report,https://fbref.com/en/matches/f2614a92/Chicago-Red-Stars-Seattle-Reign-FC-September-4-2016-NWSL,f2614a92
+Regular Season,Sat,9/3/16,19:30 (20:30),Dash,4–2,Pride,6819,BBVA Compass Stadium,,Match Report,https://fbref.com/en/matches/83cbdbe0/Houston-Dash-Orlando-Pride-September-3-2016-NWSL,83cbdbe0
+Regular Season,Wed,9/7/16,19:00,Sky Blue FC,1–1,Pride,2055,,,Match Report,https://fbref.com/en/matches/85aa5c2b/Sky-Blue-FC-Orlando-Pride-September-7-2016-NWSL,85aa5c2b
+Regular Season,Wed,9/7/16,19:00,Spirit,2–1,Reign,3039,Maureen Hendricks Field at Maryland Socc...,,Match Report,https://fbref.com/en/matches/4bed2f1e/Washington-Spirit-Seattle-Reign-FC-September-7-2016-NWSL,4bed2f1e
+Regular Season,Wed,9/7/16,19:00,Boston Breakers,2–2,WNY Flash,1435,,,Match Report,https://fbref.com/en/matches/2fbedf34/Boston-Breakers-Western-New-York-Flash-September-7-2016-NWSL,2fbedf34
+Regular Season,Wed,9/7/16,19:00 (22:00),Thorns,3–0,Dash,13752,Providence Park,,Match Report,https://fbref.com/en/matches/f39f5cc1/Portland-Thorns-FC-Houston-Dash-September-7-2016-NWSL,f39f5cc1
+Regular Season,Wed,9/7/16,19:00 (20:00),Red Stars,2–3,Kansas City,2068,Toyota Park,,Match Report,https://fbref.com/en/matches/45b7e16a/Chicago-Red-Stars-FC-Kansas-City-September-7-2016-NWSL,45b7e16a
+Regular Season,Sat,9/10/16,19:30,Pride,1–2,Sky Blue FC,6788,Camping World Stadium,,Match Report,https://fbref.com/en/matches/4d0c3cc1/Orlando-Pride-Sky-Blue-FC-September-10-2016-NWSL,4d0c3cc1
+Regular Season,Sun,9/11/16,17:00 (18:00),Kansas City,0–0,Red Stars,2303,,,Match Report,https://fbref.com/en/matches/ec6febf9/FC-Kansas-City-Chicago-Red-Stars-September-11-2016-NWSL,ec6febf9
+Regular Season,Sun,9/11/16,18:00 (19:00),Dash,4–1,Boston Breakers,6107,BBVA Compass Stadium,,Match Report,https://fbref.com/en/matches/b4d08b96/Houston-Dash-Boston-Breakers-September-11-2016-NWSL,b4d08b96
+Regular Season,Sun,9/11/16,18:30 (21:30),Thorns,3–2,WNY Flash,21144,Providence Park,,Match Report,https://fbref.com/en/matches/e60937a7/Portland-Thorns-FC-Western-New-York-Flash-September-11-2016-NWSL,e60937a7
+Regular Season,Sun,9/11/16,19:00 (22:00),Reign,2–0,Spirit,4711,,,Match Report,https://fbref.com/en/matches/2a58c0e7/Seattle-Reign-FC-Washington-Spirit-September-11-2016-NWSL,2a58c0e7
+Regular Season,Sat,9/24/16,17:00,Pride,1–2,Kansas City,7454,Camping World Stadium,,Match Report,https://fbref.com/en/matches/840295a3/Orlando-Pride-FC-Kansas-City-September-24-2016-NWSL,840295a3
+Regular Season,Sat,9/24/16,19:00,Boston Breakers,0–4,WNY Flash,4027,,,Match Report,https://fbref.com/en/matches/239f97b3/Boston-Breakers-Western-New-York-Flash-September-24-2016-NWSL,239f97b3
+Regular Season,Sun,9/25/16,19:00,Sky Blue FC,1–3,Thorns,3780,,,Match Report,https://fbref.com/en/matches/6c9e55c3/Sky-Blue-FC-Portland-Thorns-FC-September-25-2016-NWSL,6c9e55c3
+Regular Season,Sat,9/24/16,19:00 (20:00),Red Stars,3–1,Spirit,3712,Toyota Park,,Match Report,https://fbref.com/en/matches/8e188aca/Chicago-Red-Stars-Washington-Spirit-September-24-2016-NWSL,8e188aca
+Regular Season,Sun,9/25/16,20:15 (21:15),Dash,2–3,Reign,5651,BBVA Compass Stadium,,Match Report,https://fbref.com/en/matches/d844b93b/Houston-Dash-Seattle-Reign-FC-September-25-2016-NWSL,d844b93b
+Semifinals,Fri,9/30/16,20:00,Spirit,2–1,Red Stars,4249,Maureen Hendricks Field at Maryland Socc...,,Match Report,https://fbref.com/en/matches/67767cee/Washington-Spirit-Chicago-Red-Stars-September-30-2016-NWSL,67767cee
+Semifinals,Sun,10/2/16,14:00 (17:00),Thorns,3–4,WNY Flash,20086,Providence Park,,Match Report,https://fbref.com/en/matches/fbc0a335/Portland-Thorns-FC-Western-New-York-Flash-October-2-2016-NWSL,fbc0a335
+Final,Sun,10/9/16,16:00 (17:00),Spirit,(2) 2–2 (3),WNY Flash,8255,BBVA Compass Stadium (Neutral Site),,Match Report,https://fbref.com/en/matches/55312976/Washington-Spirit-Western-New-York-Flash-October-9-2016-NWSL,55312976
