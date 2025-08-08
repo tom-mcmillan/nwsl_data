@@ -1,0 +1,6 @@
+new-origin	https://github.com/tom-mcmillan/nwsl_data_mcp.git (fetch)
+new-origin	https://github.com/tom-mcmillan/nwsl_data_mcp.git (push)
+origin	https://github.com/tom-mcmillan/nwsl_data.git (fetch)
+origin	https://github.com/tom-mcmillan/nwsl_data.git (push)
+  initial-push e51bf48 [origin/initial-push: gone] Remove database files from git tracking
+* main         f84f528 [origin/main] Update documentation consolidation status - GitHub Pages eliminated
