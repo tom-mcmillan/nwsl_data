@@ -7,9 +7,26 @@ import os
 
 # List of 2013 match_ids (first 20 for testing)
 match_ids_2013_sample = [
-    "6aee226c", "5c187984", "eb172ca3", "d0426a07", "83edc9ff", "d5615e5b", "064fab50", "7284c984",
-    "81481f61", "6a57c82e", "8883ea79", "fb569f13", "f8177893", "7ac1c0c8", "0ca050d4", "1a01081c",
-    "b9cf7980", "0e4932ff", "12c17fb7", "8640ac6f"
+    "6aee226c",
+    "5c187984",
+    "eb172ca3",
+    "d0426a07",
+    "83edc9ff",
+    "d5615e5b",
+    "064fab50",
+    "7284c984",
+    "81481f61",
+    "6a57c82e",
+    "8883ea79",
+    "fb569f13",
+    "f8177893",
+    "7ac1c0c8",
+    "0ca050d4",
+    "1a01081c",
+    "b9cf7980",
+    "0e4932ff",
+    "12c17fb7",
+    "8640ac6f",
 ]
 
 html_dir = "/Users/thomasmcmillan/projects/nwsl_data_backup_data/notebooks/match_html_files"

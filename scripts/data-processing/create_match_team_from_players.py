@@ -5,13 +5,13 @@ Aggregates team-level statistics from the existing match_player table.
 This approach leverages your existing, clean player data rather than re-parsing CSVs.
 """
 
-import sqlite3
 import hashlib
 import logging
-from datetime import datetime
+import sqlite3
 
 # Set up logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+
 
 def generate_team_stats_id(match_id: str, team_id: str) -> str:
     """Generate unique team stats ID."""
@@ -19,11 +19,12 @@ def generate_team_stats_id(match_id: str, team_id: str) -> str:
     hex_hash = hashlib.md5(content.encode()).hexdigest()[:8]
     return f"team_{hex_hash}"
 
+
 def create_team_summary_table(db_path: str):
     """Create the team summary table with essential team statistics."""
-    
+
     conn = sqlite3.connect(db_path)
-    
+
     # Create simplified team summary table
     create_sql = """
     CREATE TABLE IF NOT EXISTS match_team_summary (
@@ -76,21 +77,22 @@ def create_team_summary_table(db_path: str):
         UNIQUE(match_id, team_id)
     );
     """
-    
+
     conn.execute(create_sql)
     conn.commit()
     conn.close()
-    
+
     logging.info("✅ Created match_team_summary table")
+
 
 def aggregate_team_stats_from_players(db_path: str):
     """
     Aggregate team statistics from existing match_player data.
     This is much more reliable than parsing CSV headers.
     """
-    
+
     conn = sqlite3.connect(db_path)
-    
+
     # SQL to aggregate team stats from match_player table using actual column names
     aggregate_sql = """
     INSERT OR REPLACE INTO match_team_summary (
@@ -170,14 +172,14 @@ def aggregate_team_stats_from_players(db_path: str):
     GROUP BY mp.match_id, mp.team_id, m.match_date
     ORDER BY mp.match_id, mp.team_id;
     """
-    
+
     try:
         cursor = conn.execute(aggregate_sql)
         rows_affected = cursor.rowcount
         conn.commit()
-        
+
         logging.info(f"✅ Aggregated team stats for {rows_affected} team-match combinations")
-        
+
         # Get summary statistics
         summary_sql = """
         SELECT 
@@ -189,32 +191,33 @@ def aggregate_team_stats_from_players(db_path: str):
             AVG(players_used) as avg_players_per_team
         FROM match_team_summary;
         """
-        
+
         summary = conn.execute(summary_sql).fetchone()
-        
-        logging.info(f"📊 SUMMARY STATISTICS:")
+
+        logging.info("📊 SUMMARY STATISTICS:")
         logging.info(f"   Total team records: {summary[0]}")
         logging.info(f"   Unique matches: {summary[1]}")
         logging.info(f"   Unique teams: {summary[2]}")
         logging.info(f"   Average goals per team: {summary[3]:.1f}")
         logging.info(f"   Average pass accuracy: {summary[4]:.1f}%")
         logging.info(f"   Average players per team: {summary[5]:.1f}")
-        
+
         return rows_affected
-        
+
     except Exception as e:
         logging.error(f"❌ Error aggregating team stats: {e}")
         conn.rollback()
         return 0
-    
+
     finally:
         conn.close()
 
+
 def validate_team_summary_data(db_path: str):
     """Validate the created team summary data."""
-    
+
     conn = sqlite3.connect(db_path)
-    
+
     # Check for data quality issues
     validation_sql = """
     SELECT 
@@ -251,13 +254,13 @@ def validate_team_summary_data(db_path: str):
     FROM match_team_summary 
     WHERE pass_accuracy = 100.0 AND passes_attempted > 10;
     """
-    
+
     validation_results = conn.execute(validation_sql).fetchall()
-    
+
     logging.info("🔍 DATA VALIDATION:")
     for check_type, count in validation_results:
         logging.info(f"   {check_type}: {count}")
-    
+
     # Show sample data
     sample_sql = """
     SELECT 
@@ -267,20 +270,23 @@ def validate_team_summary_data(db_path: str):
     ORDER BY match_id 
     LIMIT 5;
     """
-    
+
     sample_data = conn.execute(sample_sql).fetchall()
-    
+
     logging.info("📋 SAMPLE DATA:")
     for row in sample_data:
-        logging.info(f"   Match {row[0][:8]}, Team {row[1][:8]}: {row[2]} goals, {row[3]} shots, {row[6]:.1f}% pass accuracy, {row[7]} players")
-    
+        logging.info(
+            f"   Match {row[0][:8]}, Team {row[1][:8]}: {row[2]} goals, {row[3]} shots, {row[6]:.1f}% pass accuracy, {row[7]} players"
+        )
+
     conn.close()
+
 
 def clean_old_comprehensive_table(db_path: str):
     """Clean out empty records from the old comprehensive table."""
-    
+
     conn = sqlite3.connect(db_path)
-    
+
     try:
         # Count empty records
         count_sql = """
@@ -288,53 +294,53 @@ def clean_old_comprehensive_table(db_path: str):
         WHERE goals IS NULL AND shots IS NULL AND passes_completed IS NULL;
         """
         empty_count = conn.execute(count_sql).fetchone()[0]
-        
+
         if empty_count > 0:
             # Delete empty records
             delete_sql = """
             DELETE FROM match_team_comprehensive 
             WHERE goals IS NULL AND shots IS NULL AND passes_completed IS NULL;
             """
-            
+
             conn.execute(delete_sql)
             conn.commit()
-            
+
             logging.info(f"🧹 Cleaned {empty_count} empty records from match_team_comprehensive")
         else:
             logging.info("🧹 No empty records found in match_team_comprehensive")
-    
+
     except Exception as e:
         logging.error(f"❌ Error cleaning comprehensive table: {e}")
-    
+
     finally:
         conn.close()
 
+
 if __name__ == "__main__":
-    
     # Configuration
     db_path = "/Users/thomasmcmillan/projects/nwsl_data/data/processed/nwsldata.db"
-    
+
     logging.info("🚀 CREATING TEAM SUMMARY FROM PLAYER DATA")
     logging.info("=" * 60)
-    
+
     # Step 1: Create the team summary table
     create_team_summary_table(db_path)
-    
+
     # Step 2: Aggregate team stats from existing match_player data
     team_records = aggregate_team_stats_from_players(db_path)
-    
+
     if team_records > 0:
         # Step 3: Validate the data
         validate_team_summary_data(db_path)
-        
+
         # Step 4: Clean the old comprehensive table (optional)
         clean_old_comprehensive_table(db_path)
-        
+
         logging.info("=" * 60)
         logging.info("🎉 SUCCESS! Team summary table created from player data")
         logging.info(f"📊 {team_records} team records created")
         logging.info("💡 This approach leverages your existing, clean match_player data")
         logging.info("✨ Much more reliable than parsing complex CSV headers!")
-        
+
     else:
         logging.error("❌ Failed to create team summary data")

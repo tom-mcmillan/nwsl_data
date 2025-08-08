@@ -14,17 +14,17 @@ SAMPLE_MATCHES = [
         "away_team": "OL Reign",
         "home_score": 2,
         "away_score": 1,
-        "match_date": "2024-05-01"
+        "match_date": "2024-05-01",
     },
     {
-        "match_id": "sample_match_002", 
+        "match_id": "sample_match_002",
         "season_id": 2024,
         "home_team": "Kansas City Current",
         "away_team": "Angel City FC",
         "home_score": 1,
         "away_score": 3,
-        "match_date": "2024-05-08"
-    }
+        "match_date": "2024-05-08",
+    },
 ]
 
 # Sample player performance data
@@ -37,18 +37,18 @@ SAMPLE_PLAYER_STATS = [
         "goals": 1,
         "assists": 1,
         "shots": 4,
-        "shots_on_target": 2
+        "shots_on_target": 2,
     },
     {
         "match_id": "sample_match_001",
-        "player_name": "Megan Rapinoe", 
+        "player_name": "Megan Rapinoe",
         "team_name": "OL Reign",
         "minutes_played": 85,
         "goals": 1,
         "assists": 0,
         "shots": 3,
-        "shots_on_target": 2
-    }
+        "shots_on_target": 2,
+    },
 ]
 
 # Sample NIR breakdown data
@@ -57,7 +57,7 @@ SAMPLE_NIR_BREAKDOWN = {
     "defensive_impact": 0.60,
     "progression_impact": 0.80,
     "creative_impact": 0.70,
-    "physical_impact": 0.65
+    "physical_impact": 0.65,
 }
 
 # Sample team analytics
@@ -71,7 +71,7 @@ SAMPLE_TEAM_ANALYTICS = {
     "goals_for": 28,
     "goals_against": 18,
     "nir_score": 0.72,
-    "nir_breakdown": SAMPLE_NIR_BREAKDOWN
+    "nir_breakdown": SAMPLE_NIR_BREAKDOWN,
 }
 
 # Sample visualization data
@@ -80,8 +80,8 @@ SAMPLE_CHART_DATA = {
     "title": "Player Performance Profile",
     "data": {
         "categories": ["Attacking", "Defending", "Progression", "Creativity", "Physical"],
-        "values": [0.75, 0.60, 0.80, 0.70, 0.65]
-    }
+        "values": [0.75, 0.60, 0.80, 0.70, 0.65],
+    },
 }
 
 # Sample season summary
@@ -93,17 +93,18 @@ SAMPLE_SEASON_SUMMARY = {
     "most_assists": "Megan Rapinoe",
     "average_goals_per_match": 2.8,
     "season_start": "2024-03-16",
-    "season_end": "2024-11-23"
+    "season_end": "2024-11-23",
 }
+
 
 # Helper function to create test database with sample data
 def create_sample_database(db_path: str):
     """Create a test database with sample data."""
     import sqlite3
-    
+
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
-    
+
     # Create tables
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS match (
@@ -116,7 +117,7 @@ def create_sample_database(db_path: str):
             match_date TEXT
         )
     """)
-    
+
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS match_player_summary (
             match_id TEXT,
@@ -130,25 +131,40 @@ def create_sample_database(db_path: str):
             PRIMARY KEY (match_id, player_name)
         )
     """)
-    
+
     # Insert sample data
     for match in SAMPLE_MATCHES:
-        cursor.execute("""
+        cursor.execute(
+            """
             INSERT INTO match VALUES (?, ?, ?, ?, ?, ?, ?)
-        """, (
-            match["match_id"], match["season_id"], match["home_team"],
-            match["away_team"], match["home_score"], match["away_score"],
-            match["match_date"]
-        ))
-    
+        """,
+            (
+                match["match_id"],
+                match["season_id"],
+                match["home_team"],
+                match["away_team"],
+                match["home_score"],
+                match["away_score"],
+                match["match_date"],
+            ),
+        )
+
     for stats in SAMPLE_PLAYER_STATS:
-        cursor.execute("""
+        cursor.execute(
+            """
             INSERT INTO match_player_summary VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-        """, (
-            stats["match_id"], stats["player_name"], stats["team_name"],
-            stats["minutes_played"], stats["goals"], stats["assists"],
-            stats["shots"], stats["shots_on_target"]
-        ))
-    
+        """,
+            (
+                stats["match_id"],
+                stats["player_name"],
+                stats["team_name"],
+                stats["minutes_played"],
+                stats["goals"],
+                stats["assists"],
+                stats["shots"],
+                stats["shots_on_target"],
+            ),
+        )
+
     conn.commit()
     conn.close()

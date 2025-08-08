@@ -3,87 +3,87 @@
 Database Inserter - Insert extracted player stats into match_player table
 """
 
+import logging
 import sqlite3
 import uuid
-from typing import List, Dict
-import logging
 
 logger = logging.getLogger(__name__)
 
+
 class DatabaseInserter:
     """Insert player stats into the match_player table"""
-    
+
     def __init__(self, db_path: str):
         self.db_path = db_path
-        
-    def insert_match_players(self, players: List[Dict]) -> bool:
+
+    def insert_match_players(self, players: list[dict]) -> bool:
         """Insert list of player dictionaries into match_player table"""
-        
+
         try:
             conn = sqlite3.connect(self.db_path)
             cursor = conn.cursor()
-            
+
             # Check if match_id already has data
             if players:
-                match_id = players[0]['match_id']
+                match_id = players[0]["match_id"]
                 cursor.execute("SELECT COUNT(*) FROM match_player WHERE match_id = ?", (match_id,))
                 existing_count = cursor.fetchone()[0]
-                
+
                 if existing_count > 0:
                     logger.info(f"⚠️  Match {match_id} already has {existing_count} player records. Skipping.")
                     conn.close()
                     return True
-            
+
             # Insert each player
             inserted_count = 0
             for player in players:
                 # Generate unique match_player_id
-                player['match_player_id'] = str(uuid.uuid4())[:8]
-                
+                player["match_player_id"] = str(uuid.uuid4())[:8]
+
                 # Resolve team_id and player_id if possible
                 self._resolve_team_info(cursor, player)
-                
+
                 # Insert player record
                 if self._insert_player_record(cursor, player):
                     inserted_count += 1
-            
+
             conn.commit()
             conn.close()
-            
+
             logger.info(f"✅ Successfully inserted {inserted_count}/{len(players)} player records")
             return True
-            
+
         except Exception as e:
             logger.error(f"❌ Error inserting player data: {str(e)}")
             return False
-    
-    def _resolve_team_info(self, cursor, player: Dict):
+
+    def _resolve_team_info(self, cursor, player: dict):
         """Resolve team_id and player_id from existing database data"""
-        
+
         # Try to resolve team_name from team_id if we have hex team_id
-        if player.get('team_id'):
-            cursor.execute("SELECT team_name_1 FROM team WHERE team_id = ?", (player['team_id'],))
+        if player.get("team_id"):
+            cursor.execute("SELECT team_name_1 FROM team WHERE team_id = ?", (player["team_id"],))
             result = cursor.fetchone()
             if result:
-                player['team_name'] = result[0]
-        
+                player["team_name"] = result[0]
+
         # Try to resolve player_id from player name
-        if player.get('player_name'):
-            cursor.execute("SELECT player_id FROM player WHERE player_name = ?", (player['player_name'],))
+        if player.get("player_name"):
+            cursor.execute("SELECT player_id FROM player WHERE player_name = ?", (player["player_name"],))
             result = cursor.fetchone()
             if result:
-                player['player_id'] = result[0]
-        
+                player["player_id"] = result[0]
+
         # Try to resolve season_id from match_id
-        if player.get('match_id'):
-            cursor.execute("SELECT season_id FROM match WHERE match_id = ?", (player['match_id'],))
+        if player.get("match_id"):
+            cursor.execute("SELECT season_id FROM match WHERE match_id = ?", (player["match_id"],))
             result = cursor.fetchone()
             if result:
-                player['season_id'] = result[0]
-    
-    def _insert_player_record(self, cursor, player: Dict) -> bool:
+                player["season_id"] = result[0]
+
+    def _insert_player_record(self, cursor, player: dict) -> bool:
         """Insert a single player record into match_player table"""
-        
+
         try:
             # Build INSERT statement for all schema fields
             insert_sql = """
@@ -144,137 +144,197 @@ class DatabaseInserter:
                     -- Aerial Duels
                     aerial_won, aerial_lost, aerial_won_pct
                 ) VALUES ({})
-            """.format(','.join(['?' for _ in range(132)]))  # 132 fields total
-            
+            """.format(",".join(["?" for _ in range(132)]))  # 132 fields total
+
             # Create values tuple in same order as INSERT
             values = (
-                player.get('match_player_id'),
-                player.get('match_id'),
-                player.get('player_id'),
-                player.get('player_name'),
-                player.get('team_id'),
-                player.get('team_name'),
-                player.get('shirt_number'),
-                player.get('position'),
-                player.get('minutes_played'),
-                player.get('season_id'),
-                
+                player.get("match_player_id"),
+                player.get("match_id"),
+                player.get("player_id"),
+                player.get("player_name"),
+                player.get("team_id"),
+                player.get("team_name"),
+                player.get("shirt_number"),
+                player.get("position"),
+                player.get("minutes_played"),
+                player.get("season_id"),
                 # Summary Performance
-                player.get('summary_perf_gls'),
-                player.get('summary_perf_ast'),
-                player.get('summary_perf_pk'),
-                player.get('summary_perf_pkatt'),
-                player.get('summary_perf_sh'),
-                player.get('summary_perf_sot'),
-                player.get('summary_perf_crdy'),
-                player.get('summary_perf_crdr'),
-                player.get('summary_perf_touches'),
-                player.get('summary_perf_tkl'),
-                player.get('summary_perf_int'),
-                player.get('summary_perf_blocks'),
-                
+                player.get("summary_perf_gls"),
+                player.get("summary_perf_ast"),
+                player.get("summary_perf_pk"),
+                player.get("summary_perf_pkatt"),
+                player.get("summary_perf_sh"),
+                player.get("summary_perf_sot"),
+                player.get("summary_perf_crdy"),
+                player.get("summary_perf_crdr"),
+                player.get("summary_perf_touches"),
+                player.get("summary_perf_tkl"),
+                player.get("summary_perf_int"),
+                player.get("summary_perf_blocks"),
                 # Summary Expected
-                player.get('summary_exp_xg'),
-                player.get('summary_exp_npxg'),
-                player.get('summary_exp_xag'),
-                
+                player.get("summary_exp_xg"),
+                player.get("summary_exp_npxg"),
+                player.get("summary_exp_xag"),
                 # Summary SCA/GCA
-                player.get('summary_sca_sca'),
-                player.get('summary_sca_gca'),
-                
+                player.get("summary_sca_sca"),
+                player.get("summary_sca_gca"),
                 # Summary Passing
-                player.get('summary_pass_cmp'),
-                player.get('summary_pass_att'),
-                player.get('summary_pass_cmp_pct'),
-                player.get('summary_pass_prgp'),
-                
+                player.get("summary_pass_cmp"),
+                player.get("summary_pass_att"),
+                player.get("summary_pass_cmp_pct"),
+                player.get("summary_pass_prgp"),
                 # Summary Carries & Take-ons
-                player.get('summary_carry_carries'),
-                player.get('summary_carry_prgc'),
-                player.get('summary_take_att'),
-                player.get('summary_take_succ'),
-                
+                player.get("summary_carry_carries"),
+                player.get("summary_carry_prgc"),
+                player.get("summary_take_att"),
+                player.get("summary_take_succ"),
                 # Passing Tab - set all to None for now (will enhance later)
-                *[player.get(f'passing_{field}') for field in [
-                    'total_cmp', 'total_att', 'total_cmp_pct', 'total_totdist', 'total_prgdist',
-                    'short_cmp', 'short_att', 'short_cmp_pct',
-                    'medium_cmp', 'medium_att', 'medium_cmp_pct',
-                    'long_cmp', 'long_att', 'long_cmp_pct',
-                    'ast', 'xag', 'xa', 'kp', 'final_third', 'ppa', 'crspa', 'prgp'
-                ]],
-                
+                *[
+                    player.get(f"passing_{field}")
+                    for field in [
+                        "total_cmp",
+                        "total_att",
+                        "total_cmp_pct",
+                        "total_totdist",
+                        "total_prgdist",
+                        "short_cmp",
+                        "short_att",
+                        "short_cmp_pct",
+                        "medium_cmp",
+                        "medium_att",
+                        "medium_cmp_pct",
+                        "long_cmp",
+                        "long_att",
+                        "long_cmp_pct",
+                        "ast",
+                        "xag",
+                        "xa",
+                        "kp",
+                        "final_third",
+                        "ppa",
+                        "crspa",
+                        "prgp",
+                    ]
+                ],
                 # Pass Types Tab - set all to None for now
-                *[player.get(f'pass_types_{field}') for field in [
-                    'att', 'live', 'dead', 'fk', 'tb', 'sw', 'crs', 'ti', 'ck'
-                ]],
-                *[player.get(f'corner_{field}') for field in ['in', 'out', 'str']],
-                *[player.get(f'pass_outcome_{field}') for field in ['cmp', 'off', 'blocks']],
-                
+                *[
+                    player.get(f"pass_types_{field}")
+                    for field in ["att", "live", "dead", "fk", "tb", "sw", "crs", "ti", "ck"]
+                ],
+                *[player.get(f"corner_{field}") for field in ["in", "out", "str"]],
+                *[player.get(f"pass_outcome_{field}") for field in ["cmp", "off", "blocks"]],
                 # Defensive Actions Tab
-                *[player.get(f'def_{field}') for field in [
-                    'tkl', 'tklw', 'tkl_def_3rd', 'tkl_mid_3rd', 'tkl_att_3rd',
-                    'chal_tkl', 'chal_att', 'chal_tkl_pct', 'chal_lost',
-                    'blocks_total', 'blocks_sh', 'blocks_pass',
-                    'int', 'tkl_int', 'clr', 'err'
-                ]],
-                
+                *[
+                    player.get(f"def_{field}")
+                    for field in [
+                        "tkl",
+                        "tklw",
+                        "tkl_def_3rd",
+                        "tkl_mid_3rd",
+                        "tkl_att_3rd",
+                        "chal_tkl",
+                        "chal_att",
+                        "chal_tkl_pct",
+                        "chal_lost",
+                        "blocks_total",
+                        "blocks_sh",
+                        "blocks_pass",
+                        "int",
+                        "tkl_int",
+                        "clr",
+                        "err",
+                    ]
+                ],
                 # Possession Tab
-                *[player.get(f'poss_{field}') for field in [
-                    'touches', 'touches_def_pen', 'touches_def_3rd', 'touches_mid_3rd',
-                    'touches_att_3rd', 'touches_att_pen', 'touches_live',
-                    'take_att', 'take_succ', 'take_succ_pct', 'take_tkld', 'take_tkld_pct',
-                    'carry_carries', 'carry_totdist', 'carry_prgdist', 'carry_prgc',
-                    'carry_final_third', 'carry_cpa', 'carry_mis', 'carry_dis',
-                    'rec_rec', 'rec_prgr'
-                ]],
-                
+                *[
+                    player.get(f"poss_{field}")
+                    for field in [
+                        "touches",
+                        "touches_def_pen",
+                        "touches_def_3rd",
+                        "touches_mid_3rd",
+                        "touches_att_3rd",
+                        "touches_att_pen",
+                        "touches_live",
+                        "take_att",
+                        "take_succ",
+                        "take_succ_pct",
+                        "take_tkld",
+                        "take_tkld_pct",
+                        "carry_carries",
+                        "carry_totdist",
+                        "carry_prgdist",
+                        "carry_prgc",
+                        "carry_final_third",
+                        "carry_cpa",
+                        "carry_mis",
+                        "carry_dis",
+                        "rec_rec",
+                        "rec_prgr",
+                    ]
+                ],
                 # Misc Stats Tab
-                *[player.get(f'misc_{field}') for field in [
-                    'crdy', 'crdr', '2crdy', 'fls', 'fld', 'off',
-                    'crs', 'int', 'tklw', 'pkwon', 'pkcon', 'og', 'recov'
-                ]],
-                
+                *[
+                    player.get(f"misc_{field}")
+                    for field in [
+                        "crdy",
+                        "crdr",
+                        "2crdy",
+                        "fls",
+                        "fld",
+                        "off",
+                        "crs",
+                        "int",
+                        "tklw",
+                        "pkwon",
+                        "pkcon",
+                        "og",
+                        "recov",
+                    ]
+                ],
                 # Aerial Duels
-                player.get('aerial_won'),
-                player.get('aerial_lost'),
-                player.get('aerial_won_pct')
+                player.get("aerial_won"),
+                player.get("aerial_lost"),
+                player.get("aerial_won_pct"),
             )
-            
+
             cursor.execute(insert_sql, values)
             return True
-            
+
         except Exception as e:
             logger.error(f"❌ Error inserting player {player.get('player_name', 'Unknown')}: {str(e)}")
             return False
 
+
 def test_database_insertion():
     """Test database insertion with sample data"""
-    
+
     # Create sample player data
     sample_players = [
         {
-            'match_id': 'test123',
-            'player_name': 'Test Player 1',
-            'team_id': 'test_team',
-            'summary_perf_gls': 1,
-            'summary_perf_ast': 0,
-            'summary_exp_xg': 0.5,
+            "match_id": "test123",
+            "player_name": "Test Player 1",
+            "team_id": "test_team",
+            "summary_perf_gls": 1,
+            "summary_perf_ast": 0,
+            "summary_exp_xg": 0.5,
         },
         {
-            'match_id': 'test123',
-            'player_name': 'Test Player 2', 
-            'team_id': 'test_team',
-            'summary_perf_gls': 0,
-            'summary_perf_ast': 1,
-            'summary_exp_xg': 0.2,
-        }
+            "match_id": "test123",
+            "player_name": "Test Player 2",
+            "team_id": "test_team",
+            "summary_perf_gls": 0,
+            "summary_perf_ast": 1,
+            "summary_exp_xg": 0.2,
+        },
     ]
-    
+
     db_path = "data/processed/nwsldata.db"
     inserter = DatabaseInserter(db_path)
-    
+
     success = inserter.insert_match_players(sample_players)
     print(f"Insertion test: {'SUCCESS' if success else 'FAILED'}")
+
 
 if __name__ == "__main__":
     test_database_insertion()

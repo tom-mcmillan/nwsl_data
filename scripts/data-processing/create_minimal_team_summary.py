@@ -3,20 +3,17 @@
 Create Minimal Team Summary - Starting with 2013 fields only
 """
 
-import sqlite3
-import pandas as pd
-import os
-import hashlib
-from pathlib import Path
 import logging
+import sqlite3
 
 # Set up logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+
 
 def create_minimal_team_summary_table(db_path: str):
     """Create minimal team summary table with only 2013 fields."""
     conn = sqlite3.connect(db_path)
-    
+
     create_sql = """
     CREATE TABLE IF NOT EXISTS match_team_summary (
         team_stats_id TEXT PRIMARY KEY,
@@ -43,20 +40,20 @@ def create_minimal_team_summary_table(db_path: str):
         UNIQUE(match_id, team_id)
     );
     """
-    
+
     conn.execute(create_sql)
     conn.commit()
     conn.close()
-    
+
     logging.info("✅ Created minimal match_team_summary table with 2013 fields")
 
+
 if __name__ == "__main__":
-    
     db_path = "/Users/thomasmcmillan/projects/nwsl_data/data/processed/nwsldata.db"
-    
+
     logging.info("🚀 CREATING MINIMAL TEAM SUMMARY TABLE")
     logging.info("=" * 50)
-    
+
     create_minimal_team_summary_table(db_path)
-    
+
     logging.info("🎉 Table created! Ready for 2013 data")

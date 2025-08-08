@@ -189,14 +189,14 @@ schema_text = """CREATE TABLE match_player (
 import re
 
 # Extract field names from schema
-field_pattern = r'(\w+)\s+(TEXT|INTEGER|REAL)'
+field_pattern = r"(\w+)\s+(TEXT|INTEGER|REAL)"
 matches = re.findall(field_pattern, schema_text)
 
 fields = []
 for match in matches:
     field_name = match[0]
     # Skip constraint keywords
-    if field_name not in ['FOREIGN', 'REFERENCES', 'KEY', 'PRIMARY', 'NOT', 'NULL']:
+    if field_name not in ["FOREIGN", "REFERENCES", "KEY", "PRIMARY", "NOT", "NULL"]:
         fields.append(field_name)
 
 print(f"Total fields found: {len(fields)}")
@@ -204,7 +204,7 @@ print("\nField list:")
 for i, field in enumerate(fields, 1):
     print(f"{i:3d}. {field}")
 
-print(f"\nField names for code:")
+print("\nField names for code:")
 print("fields = [")
 for field in fields:
     print(f"    '{field}',")

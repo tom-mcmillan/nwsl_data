@@ -12,6 +12,7 @@ from typing import Any
 
 logger = logging.getLogger(__name__)
 
+
 def safe_json_response(data: Any) -> str:
     """Safely convert data to JSON string with error handling"""
     try:
