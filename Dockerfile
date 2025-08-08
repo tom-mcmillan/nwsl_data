@@ -6,16 +6,11 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy application code, database, and documentation source
+# Copy application code and database
 COPY __init__.py ./
 COPY src/ ./src/
 COPY scripts/ ./scripts/
 COPY data/processed/nwsldata.db ./data/processed/
-COPY docs/ ./docs/
-COPY mkdocs.yml ./
-
-# Build documentation during Docker build
-RUN mkdocs build
 
 # Create non-root user for security
 RUN useradd --create-home --shell /bin/bash app \
