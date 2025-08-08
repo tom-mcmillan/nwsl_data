@@ -49,8 +49,7 @@ logger = logging.getLogger("nwsl-mcp-server")
 # Database configuration
 DB_PATH = Path(__file__).parent.parent / "data" / "processed" / "nwsldata.db"
 
-# Documentation configuration
-DOCS_PATH = Path(__file__).parent.parent / "site"
+# Project root for general usage
 PROJECT_ROOT = Path(__file__).parent.parent
 
 # Initialize unified analytics intelligence system
@@ -728,51 +727,7 @@ def create_team_comparison_chart(
         logger.error(f"Error in create_team_comparison_chart: {e}")
         return safe_json_response({"error": f"Team comparison chart failed: {str(e)}"})
 
-def setup_documentation_routes(app: FastAPI):
-    """Configure FastAPI app to serve documentation at /docs/ path"""
-    
-    # Ensure documentation directory exists
-    if not DOCS_PATH.exists():
-        logger.warning(f"Documentation not built yet. Run 'mkdocs build' to generate docs at {DOCS_PATH}")
-        return
-    
-    # Mount static files for documentation assets
-    app.mount("/docs/assets", StaticFiles(directory=str(DOCS_PATH / "assets")), name="docs-assets")
-    app.mount("/docs/search", StaticFiles(directory=str(DOCS_PATH / "search")), name="docs-search")
-    
-    @app.get("/docs/", response_class=HTMLResponse)
-    @app.get("/docs", response_class=HTMLResponse)
-    async def docs_root():
-        """Serve documentation homepage"""
-        index_file = DOCS_PATH / "index.html"
-        if index_file.exists():
-            return FileResponse(str(index_file))
-        return HTMLResponse("<h1>Documentation not built</h1><p>Run 'mkdocs build' to generate documentation.</p>", status_code=404)
-    
-    @app.get("/docs/{path:path}", response_class=HTMLResponse)
-    async def docs_pages(path: str):
-        """Serve documentation pages"""
-        # Handle directory requests by looking for index.html
-        if path.endswith('/') or not '.' in path.split('/')[-1]:
-            # This is likely a directory, look for index.html
-            if path.endswith('/'):
-                path = path.rstrip('/')
-            index_path = DOCS_PATH / path / "index.html"
-            if index_path.exists():
-                return FileResponse(str(index_path))
-        
-        # Handle direct file requests
-        file_path = DOCS_PATH / path
-        if file_path.exists() and file_path.is_file():
-            return FileResponse(str(file_path))
-        
-        # If it's an HTML request without .html extension, try adding it
-        if not path.endswith('.html') and '.' not in path.split('/')[-1]:
-            html_path = DOCS_PATH / f"{path}.html"
-            if html_path.exists():
-                return FileResponse(str(html_path))
-        
-        return HTMLResponse("<h1>Page not found</h1>", status_code=404)
+# Documentation now handled by nwsl_data_platform at platform.nwsldata.com/docs
 
 if __name__ == "__main__" or __name__ == "src.server":
     # Run as HTTP server for remote MCP access (Cloud Run deployment)
@@ -801,9 +756,8 @@ if __name__ == "__main__" or __name__ == "src.server":
         # Get FastMCP streamable HTTP app for Cloud Run deployment
         app = mcp.streamable_http_app()
         
-        # Note: Documentation routes disabled for now - FastMCP uses Starlette, not FastAPI
-        # TODO: Implement documentation serving with Starlette routing
-        logger.info("📖 Documentation serving temporarily disabled (FastMCP app incompatibility)")
+        # Documentation now served at platform.nwsldata.com/docs
+        logger.info("📖 Documentation available at platform.nwsldata.com/docs")
         
         # Run with uvicorn for Cloud Run
         uvicorn.run(

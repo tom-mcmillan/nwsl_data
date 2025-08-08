@@ -41,7 +41,6 @@ nwsl_data/
 │   ├── batch_scripts/             # Historical batch processors
 │   └── temp_scripts/              # One-off utilities and debugging tools
 ├── 🏛 src/                        # MCP server and analysis components
-├── 📚 docs/                       # Technical documentation
 ├── 📝 logs/                       # Processing logs and reports
 └── 🚀 deployment/                 # Production deployment configs
 ```
@@ -145,9 +144,11 @@ LIMIT 10
 
 ## 📚 Documentation
 
+**Full documentation available at: [platform.nwsldata.com/docs](https://platform.nwsldata.com/docs)**
+
+Project-specific documentation:
 - [`PROJECT_COMPLETION_SUMMARY.md`](PROJECT_COMPLETION_SUMMARY.md) - Detailed completion report
 - [`scripts/README.md`](scripts/README.md) - Scripts documentation
-- [`docs/`](docs/) - Technical documentation and schemas
 - [`deployment/`](deployment/) - Production deployment guides
 
 ## 🤝 Contributing
