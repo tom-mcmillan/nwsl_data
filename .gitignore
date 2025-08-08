@@ -69,3 +69,10 @@ __pycache__/
 !.env.example
 data/**/*.db
 data/**/*.sqlite
+# Local env files
+.env
+.env.*
+!.env.example
+
+# Local database
+data/processed/nwsldata.db
