@@ -1,46 +1,44 @@
 # Documentation Consolidation Project - COMPLETE ✅
 
-**Date:** August 7, 2025  
-**Status:** Successfully implemented and deployed
+**Date:** August 8, 2025  
+**Status:** Successfully implemented and deployed, old GitHub Pages eliminated
 
 ## Summary
 
-Successfully consolidated documentation workflow from two separate projects into a single, streamlined system as requested by the user.
+Successfully consolidated documentation workflow from two separate projects into a single, streamlined system. As requested by user, eliminated the old GitHub Pages documentation site to prevent confusion and maintain single source of truth.
 
 ## Architecture Implemented
 
-**Option 1: MCP Server Documentation Integration** ✅  
-- Documentation authored and maintained in `nwsl_data` project (where the database and MCP server live)
-- Built and deployed via GitHub Pages using GitHub Actions
-- Proxied to `platform.nwsldata.com/docs/` through Next.js platform
+**Unified Documentation Platform** ✅  
+- Documentation authored and maintained in `nwsl_data_platform` project
+- Built using MkDocs and served through Next.js static files
+- Available exclusively at `platform.nwsldata.com/docs/`
+- Old GitHub Pages deployment completely removed
 - MCP server functionality preserved and untouched
 
 ## Key Components
 
-### 1. GitHub Pages Workflow ✅
-- **Location:** `.github/workflows/deploy-docs.yml`
-- **Trigger:** Changes to `docs/`, `mkdocs.yml`, or workflow file
-- **Output:** Builds MkDocs Material site to GitHub Pages
-- **URL:** `https://tom-mcmillan.github.io/nwsl_data/`
+### 1. ~~GitHub Pages Workflow~~ ❌ REMOVED
+- **Status:** Eliminated as requested by user
+- **Reason:** Prevents confusion with unified docs at platform.nwsldata.com/docs
+- **Date Removed:** August 8, 2025
 
-### 2. MkDocs Configuration ✅
-- **Location:** `mkdocs.yml`
-- **Theme:** Material (standard, minimal configuration)
-- **Content:** Professional NWSL analytics documentation
-- **Custom CSS:** Optional, currently disabled for stability
+### 2. ~~MkDocs Configuration (nwsl_data)~~ ❌ REMOVED  
+- **Status:** Moved to nwsl_data_platform project
+- **Location:** Now at `nwsl_data_platform/mkdocs.yml`
 
-### 3. Next.js Proxy Configuration ✅
-- **Location:** `nwsl_data_platform/next.config.mjs`
-- **Function:** Routes `/docs/*` requests to GitHub Pages
-- **Asset Handling:** Specific proxy rules for CSS, JS, search files
-- **Result:** Clean URLs at `platform.nwsldata.com/docs/`
+### 3. Next.js Documentation Integration ✅
+- **Location:** `nwsl_data_platform/mkdocs.yml` and `next.config.mjs`
+- **Function:** Builds and serves documentation directly through Next.js
+- **Asset Handling:** Integrated asset serving with proper path resolution
+- **Result:** Unified documentation at `platform.nwsldata.com/docs/`
 
 ## Deployments
 
-### GitHub Actions (nwsl_data) ✅
+### ~~GitHub Actions (nwsl_data)~~ ❌ ELIMINATED
 - **Service:** GitHub Pages
-- **Status:** Active and building successfully
-- **Latest:** "Simplify MkDocs configuration to standard Material theme"
+- **Status:** REMOVED - No longer deploying to avoid duplicate documentation
+- **Reason:** User requested elimination of old docs site
 
 ### Cloud Run (nwsl_data_platform) ✅  
 - **Service:** `nwsl-frontend` 
@@ -52,31 +50,36 @@ Successfully consolidated documentation workflow from two separate projects into
 - **Status:** Running and fully functional
 - **Function:** MCP protocol communication (unchanged)
 
-## Verification
+## Verification (Updated August 8, 2025)
 
-✅ GitHub Pages builds automatically on changes  
-✅ Documentation visible at GitHub Pages URL  
-✅ Next.js proxy routes requests correctly  
-✅ CSS and assets load through proxy  
-✅ MCP server functionality preserved  
+❌ ~~GitHub Pages builds automatically on changes~~ - ELIMINATED  
+❌ ~~Documentation visible at GitHub Pages URL~~ - ELIMINATED  
+✅ Documentation exclusively available at `platform.nwsldata.com/docs/`  
+✅ MkDocs builds and serves through Next.js platform  
+✅ CSS and assets load correctly through unified system  
+✅ MCP server functionality preserved and untouched  
 ✅ Domain mapping configured correctly  
+✅ Old nwsldata.com/docs site eliminated as requested
 
 ## User Requirements Met
 
-- ✅ **"Documentation co-located with systems being documented"** - Documentation is in `nwsl_data` where database and MCP server live
-- ✅ **"Single project workflow"** - All documentation managed from one repository
-- ✅ **"Easier to edit, debug, and maintain"** - Direct file editing in main project
-- ✅ **"Available at platform.nwsldata.com/docs/"** - Clean URL through proxy
+- ✅ **"Documentation unified in single location"** - All docs now at platform.nwsldata.com/docs/
+- ✅ **"Single source of truth"** - No competing documentation sites
+- ✅ **"Easy to edit and maintain"** - Direct editing in nwsl_data_platform project
+- ✅ **"Available at platform.nwsldata.com/docs/"** - Clean, consistent URL
 - ✅ **"MCP server untouched"** - Core functionality preserved
+- ✅ **"Get rid of old docs"** - GitHub Pages deployment completely eliminated
 
 ## Technical Notes
 
-- Browser cache clearing may be needed to see updated styling
-- Infrastructure is fully functional and tested via command line
-- All services deployed and responding correctly
-- Documentation system ready for ongoing content updates
+- Old GitHub Pages workflow and configuration completely removed
+- All documentation build dependencies moved to nwsl_data_platform
+- No more duplicate documentation sites or deployment confusion
+- Single unified documentation system ready for ongoing updates
+- GitHub Pages repository settings may need manual disabling (if still active)
 
 ---
 
 **Project Status: COMPLETE** ✅  
-**Next Steps:** Content updates and customization as needed
+**User Request Fulfilled:** Old GitHub Pages documentation eliminated successfully  
+**Current State:** Single unified documentation at platform.nwsldata.com/docs/
