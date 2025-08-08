@@ -9,3 +9,12 @@ test:
 	. .venv/bin/activate && pytest -q
 dbcheck:
 	. .venv/bin/activate && python scripts/db_smoke_check.py
+.PHONY: fetch-db
+fetch-db:
+	@TAG?=
+ifdef TAG
+	@echo "Using TAG=$(TAG)"
+	TAG=$(TAG) scripts/fetch_public_db.sh
+else
+	scripts/fetch_public_db.sh
+endif
